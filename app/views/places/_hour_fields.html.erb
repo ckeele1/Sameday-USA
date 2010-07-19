@@ -1,0 +1,23 @@
+<p class="fields">
+	Starting on <span class="start_date_text textual-field"><%= f.object.pretty_date("start_date") %></span>
+	<%= f.calendar_date_select :start_date, :value => f.object.pretty_date("start_date"), :clear_button => false, :hidden => true, :onchange => "$(this).up('.fields').down('.start_date_text').update($F(this));" %>
+	and ending on <span class="end_date_text textual-field"><%= f.object.pretty_date("end_date") %></span>
+	<%= f.calendar_date_select :end_date, :value => f.object.pretty_date("end_date"), :clear_button => false, :hidden => true, :onchange => "$(this).up('.fields').down('.end_date_text').update($F(this));" %>
+	this place will be 
+	opening at 
+  <%= f.time_select :start_time, { :minute_step => 15, :twelve_hour => true } %> 
+	and closing at
+  <%= f.time_select :end_time, { :minute_step => 15, :twelve_hour => true } %> <br />
+	every
+	<% Hour::DAYS.each do |day| %>
+		<%= (day == Hour::DAYS.last) ? ' and ' : ', ' unless Hour::DAYS.first == day %>
+	  <span class="fieldset">
+			<%= f.check_box "days_#{day['abbreviation'].downcase}", { :class => 'days' } %>
+		  <span class="textual-field"><%= day["full_name"] %></span>
+		</span>
+	<% end %>
+
+	<span class="textual-action remove">(<%= link_to_remove_fields "remove", f %>)</span>
+	<span class="textual-action undo-remove" style="display: none;">(<%= link_to_undo_remove_fields "undo remove", f %>)</span>
+	<%= f.hidden_field :_destroy, :class => 'remove-field' %>
+</p>

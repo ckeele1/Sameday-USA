@@ -1,0 +1,14 @@
+<% form_for @user do |f| %>
+	<%= render :partial => 'shared/notice_messages', :locals => { :css_id_prefix => 'user_', :error_messages => f.error_messages } %>
+
+	<fieldset>
+		<legend>Editing User</legend>
+		<%= render :partial => 'form', :locals => { :f => f } %>
+		<p class="submit">
+			<%= f.submit 'Save'%> or <%= link_to 'cancel', users_path %>
+		</p>
+		<div class="administrative-information">
+			<%= label_tag "Last updated:" %> <%= @user.updated_at.strftime("%D %r") %>
+		</div>
+	</fieldset>
+<% end %>

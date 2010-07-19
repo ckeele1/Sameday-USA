@@ -1,0 +1,48 @@
+<h2>Places</h2>
+
+<div id="filters">
+	<%= render :partial => 'shared/filter', :locals => { :filter_fields => [
+			{ :term => params[:name], :label => 'Name' },
+			{ :term => params[:location], :label => 'Location' },
+			{ :term => params[:contact], :label => 'Contact' },
+			{ :term => params[:category], :label => 'Category' }
+		] } %>
+</div>
+
+<table>
+	<thead>
+		<th>Name</th>
+		<th>Status</th>
+		<th>Open Status</th>
+		<th>Location</th>
+		<th>Building</th>
+		<th>Categories</th>
+		<th>Contact</th>
+		<th class="actions">Actions</th>
+	</thead>
+
+<% @places.each do |place| %>
+	<tbody>
+		<tr class="<%= cycle('even','odd') %>">
+			<td><%=h place.name %></td>
+			<td><%=h place.status? ? "Active" : "Inactive" %></td>
+			<td><%=h place.current_open_status %></td>
+			<td><%=h place.location %></td>
+			<td><%=h place.try(:building).try(:name) || place.building_id %></td>
+			<td><%=h place.categories.collect(&:name).join(', ') %></td>
+			<td><%=h place.owner %></td>
+			<td class="actions">
+				<%= link_to image_tag('icons/show.png', :alt => 'Show'), place_path(place) %>
+				<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_place_path(place) if edit_places? %>
+				<%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), place, :confirm => 'Are you sure?', :method => :delete if destroy_places? %>
+			</td>
+		</tr>
+	</tbody>
+<% end %>
+</table>
+
+<%= will_paginate @places %>
+
+<br />
+
+<%= link_to 'New place', new_place_path if create_places? %>

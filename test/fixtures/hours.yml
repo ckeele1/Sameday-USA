@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  day: MyString
+  place_id: 1
+  description: MyText
+
+two:
+  day: MyString
+  place_id: 1
+  description: MyText

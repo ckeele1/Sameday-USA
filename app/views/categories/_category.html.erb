@@ -1,0 +1,11 @@
+<li class="category" id="category_<%= category.id %>">
+	<%=h category.name %>
+	<% if !category.children.empty? %>
+		<ul>
+			<%= render category.children %>
+		</ul>
+	<% else %>
+		<!-- placeholder for drag list -->
+		<ul><li class="sortables-placeholder"><span class="sortables-placeholder">drag here</span></li></ul>
+	<% end %>
+</li>

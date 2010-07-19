@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  url: MyString
+  open_status: false
+  status: false
+  longitude: 1.5
+  latitude: 1.5
+  location: MyString
+  description: MyText
+  building_id: MyString
+  owner: MyString
+  menu_link: MyString
+  payment_methods: MyText
+
+two:
+  name: MyString
+  url: MyString
+  open_status: false
+  status: false
+  longitude: 1.5
+  latitude: 1.5
+  location: MyString
+  description: MyText
+  building_id: MyString
+  owner: MyString
+  menu_link: MyString
+  payment_methods: MyText

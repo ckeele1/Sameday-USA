@@ -1,0 +1,15 @@
+<div id='video'></div>
+ 
+<script type='text/javascript'>
+  var so = new SWFObject('/flash/player-licensed.swf','mpl','380','320','9');
+  so.addParam('allowfullscreen','true');
+  so.addParam('allowscriptaccess','always');
+  so.addParam('wmode','opaque');
+	so.addVariable('bufferlength','10');
+  so.addVariable('file','<%= "#{request.protocol}#{request.host}#{":#{request.port}" unless request.port == 80}#{@place.video.url}" %>');
+  so.write('video');
+
+	var player;
+	function playerReady(obj) { player = $(obj['id']); player.addControllerListener( "PLAY", "fix_jwplayer" ) };
+	function fix_jwplayer() { player.sendEvent( "PLAY" ); player.sendEvent( "PLAY" ) };
+</script>

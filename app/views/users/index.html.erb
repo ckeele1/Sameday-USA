@@ -1,0 +1,31 @@
+<h2>Users</h2>
+
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Username</th>
+		<th class="actions">Actions</th>
+	</thead>
+
+	<tbody>
+		<% @users.each do |user| %>
+			<tr class="<%= cycle('even','odd') %>">
+				<td><%=h user.first_name %></td>
+				<td><%=h user.last_name %></td>
+				<td><%=h user.username %>
+				<td class="actions">
+					<%= link_to image_tag('icons/show.png', :alt => 'Show'), user_path(user) if edit_users? %>
+					<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_user_path(user) if edit_users? %>
+					<%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), user, :confirm => 'Are you sure?', :method => :delete if destroy_users? %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= will_paginate @users %>
+
+<br />
+
+<%= link_to 'New user', new_user_path if create_users? %>

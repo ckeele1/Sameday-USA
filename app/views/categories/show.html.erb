@@ -1,0 +1,20 @@
+<div id="right-sidebar">
+	<div class="record-status">
+		<%= @category.active? ? image_tag('icons/active-large.png', :alt => 'Active') + '<br />Active' : image_tag('icons/inactive-large.png', :alt => 'Inactive') + '<br />Inactive' %>
+	</div>
+</div>
+
+<h2><%=h @category.name %></h2>
+
+<p>
+  <b>Parent Category:</b>
+  <%=h @category.try(:parent).try(:name) %>
+</p>
+
+<p>
+	<b>Child Categories:</b>
+	<%=h @category.try(:children).collect(&:name).join(', ') %>
+</p>
+
+<%  if edit_categories? %><%= link_to 'Edit', edit_category_path(@category) %> | <% end %>
+<%= link_to 'Categories', categories_path %>

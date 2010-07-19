@@ -1,0 +1,395 @@
+body {
+	background: #CCC;
+}
+
+form p {
+	margin-bottom: 0;	
+}
+
+textarea {
+	height: 200px;
+	padding: 5px;
+	width: 350px;
+}
+
+textarea.short {
+	height: 100px;
+}
+
+thead th {
+	background: #3D166E;
+	color: #FFF;
+}
+
+tr.even td {
+	background: #B2B2E0;
+}
+
+tr.odd td {
+	background: #FEF1D4;
+}
+
+table,
+#sameday-header,
+#site-header,
+#filters,
+.pagination {
+	width: 920px;
+	float: left;
+	clear: both;
+}
+
+.pagination {
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.pagination .current {
+	font-weight: bold;
+}
+
+.container {
+	float: none;
+	clear: both;
+	background: #FFF;
+	border: 1px solid #999;
+}
+
+.container:first-child {
+	border-bottom: none;
+}
+
+.container:last-child {
+	border-top: none;
+}
+
+.top {
+	margin-top: 10px;
+}
+
+.bottom {
+	margin-bottom: 10px;
+}
+
+.invisible {
+	border: 0;
+	background: transparent;
+}
+
+#application-version {
+	float: right;
+	clear: right;
+	margin-right: 10px;
+}
+
+#footer-message {
+	text-align: center;
+	float: left;
+	width: 490px;
+}
+
+.main-column {
+	padding: 15px;
+	float: left;
+	clear: left;
+	width: 920px;
+}
+
+#place-description,
+#building-description {
+	width: 600px;
+}
+
+/* Header */
+#sameday-header {
+	background: #461f7c;
+}
+
+.sameday-logo {
+	float: left;
+}
+
+.optgroup {
+	font-weight: bold;	
+}
+
+.home-image {
+
+}
+
+/* Map */
+
+#map {
+	width: 512px;
+	height: 440px;
+	float: right;
+	border: 1px solid #999;
+}
+
+#map.mini {
+	height: 200px;
+}
+
+#map.mini,
+#map-container.mini {
+	width: 200px;
+	float: right;
+	clear: right;
+}
+
+#map-container {
+	margin-top: 15px;
+	width: 200px;
+}
+
+.map-information {
+	margin-top: 10px;
+	float: left;
+	clear: both;
+}
+
+.map-information label {
+	width: 65px;
+	display: inline-block;
+}
+
+.fieldWithErrors {
+	color: red;
+}
+
+.fieldWithErrors input {
+	border: 1px solid red;
+}
+
+#place-photo img {
+	border: 1px solid #999;
+	margin: 10px;
+}
+
+.handle {
+	width: 3em;
+}
+
+.textual-field {
+	font-weight: bold;
+}
+
+.textual-action { float: right; }
+
+.textual-action,
+.textual-action a {
+	color: #666;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+span.fieldset {
+	display: inline-block;
+}
+
+.add-more {
+	margin: 6px 0px;
+	float: right;
+	clear: both;
+}
+
+.submit {
+	float: left;
+	clear: left;
+	padding-top: 30px;
+}
+
+.odd {
+	background: #CCC;
+}
+
+.pending-delete {
+	filter:alpha(opacity=50);
+	-moz-opacity:.50;
+	opacity:.50;
+}
+
+.undo-remove {
+	color: #FF0000;
+}
+
+/* Sortables */
+#sortable ul {
+	padding-top: 4px;
+	padding-bottom: 2px;
+}
+
+#sortable li {
+	padding-left: 15px;
+	background-image: url(/images/icons/sortable.png);
+	background-repeat: no-repeat;
+	background-position: 0 .3em;
+	cursor: move;
+		margin-left: -35px;
+}
+
+#sortable .sortables-placeholder {
+	color: #CCC;
+}
+
+#sortable li,
+#sortable li.sortables-placeholder,
+.links {
+	list-style-type: none;
+}
+
+#sortable li.sortables-placeholder {
+	background: none;
+}
+
+/* Main Menu */
+#menu, #menu ul {
+	background: #F8B926;
+	float: left;
+	width: 940px;
+	padding-left: 10px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0;
+	list-style: none;
+	line-height: 1.5;
+	text-transform: uppercase;
+	z-index: 10000;
+}
+
+#menu a {
+	color: #3D166E;
+	display: block;
+	text-decoration: none;
+}
+
+#menu li {
+	float: left;
+	display: block;
+	padding: 4px 20px 4px 4px;
+}
+
+#menu li ul {
+	position: absolute;
+	background: #F8B926;
+	padding: 4px;
+	width: auto;
+	left: -999em;
+}
+
+#menu li ul li {
+	clear: both;
+}
+
+#menu li ul ul {
+	margin: -1em 0 0 10em;
+}
+
+#menu li:hover ul ul,
+#menu li:hover ul ul ul,
+#menu li.sfhover ul ul,
+#menu li.sfhover ul ul ul {
+	left: -999em;
+}
+
+#menu li:hover ul,
+#menu li li:hover ul,
+#menu li li li:hover ul,
+#menu li.sfhover ul,
+#menu li li.sfhover ul,
+#menu li li li.sfhover ul {
+	left: auto;
+}
+
+.instructions {
+	color: #666;
+	font-size: 10px;
+}
+
+.short-name,
+.identifier {
+	font-size: 14px;
+	margin-top: -16px;
+}
+
+/* Mini Calendar */
+.calendar_helper {
+	width: 300px;
+}
+
+.calendar_helper td, 
+.calendar_helper th {
+	text-align: center;
+}
+
+.calendar_helper .operating-day {
+	background: #B2B2E0;
+}
+
+#right-sidebar {
+	float: right;
+	clear: right;
+}
+
+.record-status {
+	text-align: center;
+}
+
+/* Filters */
+#filters {
+	display: block;
+	padding: 10px 0px;
+}
+
+#filters li {
+	display: inline;
+	padding: 10px;
+	background: #CCC;
+}
+
+#filters li:hover,
+#filters a:hover {
+	background: #333;
+	color: #FFF;
+}
+
+#filters form {
+	display: inline-block;
+	float: right;
+	margin-top: -18px;
+	margin-right: 4px;
+}
+
+#filters form.clear input {
+	margin-top: 6px;
+	float: right;
+}
+
+/* Administration */
+.administrative-information {
+	float: right;
+	clear: right;
+}
+
+.actions {
+	text-align: right;
+	white-space: nowrap;
+}
+
+/* Categories */
+tr td.incorrect-categorization,
+optgroup.incorrect-categorization {
+	background: #F00;
+	color: #000;
+}
+
+th.numeric,
+td.numeric {
+	width: 1px;
+	white-space: nowrap;
+}
+
+td.numeric {
+	text-align: right;
+}

@@ -1,0 +1,11 @@
+<% form_for(@place, :html => { :multipart => true }) do |f| %>
+	<%= render :partial => 'shared/notice_messages', :locals => { :css_id_prefix => 'place_', :error_messages => f.error_messages } %>
+
+	<fieldset>
+		<legend>New Place</legend>
+		<%= render :partial => 'form', :locals => { :f => f } %>
+	  <p class="submit">
+	    <%= f.submit 'Create'%> or <%= link_to 'cancel', places_path %>
+	  </p>	
+	</fieldset>
+<% end %>

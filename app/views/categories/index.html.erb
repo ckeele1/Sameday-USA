@@ -1,0 +1,20 @@
+<h2>Categories</h2>
+
+<table>
+	<thead>
+		<th>Name</th>
+		<th>Active</th>
+		<th class="numeric">Number of Places</th>
+		<th class="actions">Actions</th>
+	</thead>
+
+	<tbody>
+		<%= render :partial => 'index_category', :collection => @categories %>
+	</tbody>
+</table>
+
+<%= will_paginate @categories %>
+
+<br />
+
+<%= link_to 'New category', new_category_path if create_categories? %>

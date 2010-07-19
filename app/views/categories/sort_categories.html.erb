@@ -1,0 +1,9 @@
+<h1>Sorting categories</h1>
+<%= render :partial => 'shared/notice_messages', :locals => { :css_id_prefix => 'sort_categories_', :error_messages => nil }%>
+
+<ul id="sortable">
+	<%= render @categories %>
+</ul>
+<%= link_to 'Back to categories', categories_path %>
+
+<%= sortable_element('sortable', :url => sort_categories_path, :tree => true) %>

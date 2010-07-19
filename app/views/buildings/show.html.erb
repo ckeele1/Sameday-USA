@@ -1,0 +1,37 @@
+<script type="text/javascript" charset="utf-8">
+  var latitude = <%=h "#{@building.latitude.to_f || 0}" %>
+	var longitude = <%=h "#{@building.longitude.to_f || 0}" %>
+</script>
+<% has_map true %>
+<div id="map-container" class="mini">
+	<div id="map" class="mini">
+		<noscript>You should turn on JavaScript</noscript>
+	</div>
+	<div class="map-information">
+		<%= label_tag "Longitude" %> <%=h @building.longitude %><br />
+		<%= label_tag "Latitude" %> <%=h @building.latitude %>
+	</div>
+</div>
+
+<h2><%=h @building.name %></h2>
+<h3 class="identifier"><%=h @building.building_code %></h3>
+
+<p>
+  <%= label_tag "Aliases" %><br />
+  <%=h @building.tags.collect(&:name).join(', ') %>
+</p>
+
+<p id='building-description'>
+	<%= label_tag "Description" %><br />
+  <%=h @building.description %>
+</p>
+
+<% if @building.photo.file? %>
+	<p>
+		<%= label_tag "Photo" %><br />
+		<%= image_tag @building.photo.url(:thumbnail) %>
+	</p>
+<% end %>
+
+<% if edit_buildings? %><%= link_to 'Edit', edit_building_path(@building) %> | <% end %>
+<%= link_to 'Buildings', buildings_path %>

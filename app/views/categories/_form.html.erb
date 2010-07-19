@@ -1,0 +1,15 @@
+<p>
+  <%= f.label :name %><br />
+  <%= f.text_field :name, :class => 'title' %>
+</p>
+<p>
+ 	<%= f.label :active %><br />
+	<%= f.check_box :active, :checked => checked?(f.object.active, new_record=f.object.new_record?) %> Active
+</p>
+<p>
+  <%= f.label :category, "Parent Category" %><br />
+	<select name="category_id">
+		<option value="">No Parent Category</option>
+	  <%= expand_tree_into_select_field(Category.top, @category.category_id) %>
+	</select>
+</p>

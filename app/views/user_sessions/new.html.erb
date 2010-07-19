@@ -1,0 +1,16 @@
+<div>
+	<% form_for @user_session, :url => user_session_path do |f| %>
+	  <%= f.error_messages %>
+	  <fieldset>
+	  	<%= label :username, "Username" %><br />
+	  	<%= f.text_field :username %>
+	  </fieldset>
+	  <fieldset>
+	  	<%= label :password, "Password" %><br />
+	  	<%= f.password_field :password %>
+	  </fieldset>
+	  <div>
+	  	<%= submit_tag "Submit" %>
+	  </div>
+	<% end %>
+</div>

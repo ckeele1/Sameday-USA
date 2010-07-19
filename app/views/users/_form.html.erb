@@ -1,0 +1,19 @@
+<p>
+  <%= f.label :first_name %><br />
+  <%= f.text_field :first_name %>
+</p>
+<p>
+  <%= f.label :last_name %><br />
+  <%= f.text_field :last_name %>
+</p>
+<p>
+  <%= f.label :username %><br />
+  <%= f.text_field :username %>
+</p>
+<p>
+	<%= f.label :groups %><br />
+	<% Group.available.each do |group| %>
+		<%= check_box_tag "user[group_ids][]", group.id, @user.groups.include?(group) %>
+		<%= group.name.titleize %><br />
+	<% end %>
+</p>

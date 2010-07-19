@@ -1,0 +1,92 @@
+<script type="text/javascript" charset="utf-8">
+  var latitude = <%=h "#{f.object.latitude.to_f || 0}" %>
+	var longitude = <%=h "#{f.object.longitude.to_f || 0}" %>
+</script>
+<% has_map true %>
+<% has_video_or_audio true %>
+<div id="map">
+  <noscript>You should turn on JavaScript</noscript>
+</div>
+<p>
+  <%= f.label :name %><br />
+  <%= f.text_field :name, :class => 'title' %>
+</p>
+<p>
+  <%= f.label :url %><br />
+  <%= f.text_field :url %>
+</p>
+<p>
+	<%= f.label :photo %><br />
+	<p class="instructions">Allowed formats: JPEG, JPG, PNG, BMP, GIF</p>
+	<%= f.file_field :photo %>
+	<div id="place-photo"><%= image_tag @place.photo.url(:thumbnail) if @place.photo.file? %></div>
+</p>
+<p>
+	<%= f.label :audio %><br />
+	<p class="instructions">Allowed formats: MP3, AAC</p>
+	<%= f.file_field :audio %>
+	<% if @place.audio.file? %>
+		<%= render :partial => 'shared/audio' %>
+	<% end %>
+</p>
+<p>
+	<%= f.label :video %><br />
+	<p class="instructions">Allowed formats: MP4, MOV, M4V</p>
+	<%= f.file_field :video %>
+	<% if @place.video.file? %>
+		<%= render :partial => 'shared/video' %>
+	<% end %>
+</p>
+<p>
+	<%= f.label :status %><br />
+	<%= f.check_box :status, :checked => checked?(f.object.status, new_record=f.object.new_record?) %> Active
+</p>
+<p>
+  <%= f.label :longitude %><br />
+  <%= f.text_field :longitude %>
+</p>
+<p>
+  <%= f.label :latitude %><br />
+  <%= f.text_field :latitude %>
+</p>
+<p>
+  <%= f.label :location %><br />
+  <%= f.text_field :location %>
+</p>
+<p>
+  <%= f.label :description %><br />
+  <%= f.text_area :description %>
+</p>
+<p>
+  <%= f.label :building_id %> <%= "(was #{@place.building_id})" unless @place.building_id =~ /[0-9]/ || @place.new_record? %><br />
+  <%= f.select :building_id, Building.all.collect { |b| [ b.name, b.id ] }, { :include_blank => 'None' } %>
+</p>
+<p>
+  <%= f.label :owner, "Contact" %><br />
+  <%= f.text_field :owner %>
+</p>
+<p>
+  <%= f.label :owner, "Contact Email Address" %><br />
+  <%= f.text_field :owner_email_address %>
+</p>
+<p>
+  <%= f.label :menu_link %><br />
+  <%= f.text_field :menu_link %>
+</p>
+<p>
+  <%= f.label :payment_methods %><br />
+  <%= f.text_area :payment_methods, :class => 'short' %>
+</p>
+<p>
+  <%= f.label :categories %><br />
+	<select id="place_category_ids" name="place[category_ids][]" multiple="multiple">
+	  <%= expand_tree_into_select_field(Category.top, @place.categories.collect(&:id_s)) %>
+	</select>
+</p>
+<p>
+	<%= f.label :hours, "Hours of Operation" %>
+	<% f.fields_for :hours do |builder| %>
+		<%= render "hour_fields", :f => builder %>
+	<% end %>
+</p>
+<div class="add-more"><%= link_to_add_fields "Add more times", f, :hours %></div>

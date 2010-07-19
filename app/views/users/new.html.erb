@@ -1,0 +1,11 @@
+<% form_for @user do |f| %>
+	<%= render :partial => 'shared/notice_messages', :locals => { :css_id_prefix => 'user_', :error_messages => f.error_messages } %>
+
+	<fieldset>
+		<legend>Creating User</legend>
+		<%= render :partial => 'form', :locals => { :f => f } %>
+		<p class="submit">
+			<%= f.submit 'Create'%> or <%= link_to 'cancel', users_path %>
+		</p>
+	</fieldset>
+<% end %>

@@ -1,0 +1,89 @@
+<script type="text/javascript" charset="utf-8">
+  var latitude = <%=h "#{@place.latitude.to_f || 0}" %>
+	var longitude = <%=h "#{@place.longitude.to_f || 0}" %>
+</script>
+<% has_video_or_audio true %>
+<% has_map true %>
+<div id="right-sidebar">
+	<div class="record-status">
+		<%= @place.status? ? image_tag('icons/active-large.png', :alt => 'Active') + '<br />Active' : image_tag('icons/inactive-large.png', :alt => 'Inactive') + '<br />Inactive' %>
+	</div>
+</div>
+<div id="map-container" class="mini">
+	<div id="map" class="mini">
+		<noscript>You should turn on JavaScript</noscript>
+	</div>
+	<div class="map-information">
+		<%= label_tag "Longitude" %> <%=h @place.longitude %><br />
+		<%= label_tag "Latitude" %> <%=h @place.latitude %>
+	</div>
+</div>
+
+<h2><%=h @place.name %></h2>
+
+<p>
+  <%= label_tag "Url" %><br />
+  <%=h @place.url %>
+</p>
+
+<p id='place-description'>
+	<%= label_tag "Description" %><br />
+  <%=h @place.description %>
+</p>
+
+<% if @place.photo.file? %>
+	<p>
+		<%= label_tag "Photo" %><br />
+		<%= image_tag @place.photo.url(:thumbnail) %>
+	</p>
+<% end %>
+
+<% if @place.audio.file? %>
+	<p>
+		<%= label_tag "Audio" %>
+		<%= render :partial => 'shared/audio' %>
+	</p><br />
+<% end %>
+
+<% if @place.video.file? %>
+	<p>
+		<%= label_tag "Video" %>
+		<%= render :partial => 'shared/video' %>
+		<% @place.aasm_state %>
+	</p><br />
+<% end %>
+
+<p>
+  <%= label_tag "Open status" %><br />
+  <%=h @place.open_status %>
+</p>
+
+<p>
+  <%= label_tag "Location" %><br />
+  <%=h @place.location %>
+</p>
+
+<p>
+  <%= label_tag "Building" %>
+  <%=h @place.try(:building).try(:name) || @place.building_id %>
+</p>
+
+<p>
+  <%= label_tag "Owner" %><br />
+  <%=h @place.owner %><br />
+	<%=h @place.owner_email_address %>
+</p>
+
+<p>
+  <%= label_tag "Menu link" %><br />
+  <%=h @place.menu_link %>
+</p>
+
+<p>
+  <%= label_tag "Payment methods" %><br />
+  <%=h @place.payment_methods %>
+</p>
+
+
+<% if edit_places? %><%= link_to 'Edit', edit_place_path(@place) %> | <% end %>
+<%= link_to 'Places', places_path %>

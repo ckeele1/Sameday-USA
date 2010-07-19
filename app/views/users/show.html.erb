@@ -1,0 +1,27 @@
+<p>
+	<b>First Name:</b>
+	<%=h @user.first_name %>
+</p>
+<p>
+	<b>Last Name:</b>
+	<%=h @user.last_name %>
+</p>
+<p>
+	<b>Status:</b>
+	<%=h @user.active? ? "Active" : "Inactive" %>
+</p>
+<p>
+	<b>Username:</b>
+	<%=h @user.username %>
+</p>
+<p>
+	<b>API Token:</b>
+	<code><%=h @user.single_access_token %></code>
+</p>
+<p>
+	<b>Groups:</b>
+	<%=h @user.groups.collect{ |g| g.name.titleize }.join(', ') %>
+</p>
+
+<% if edit_users? %><%= link_to 'Edit', edit_user_path(@user) %> | <% end %>
+<%= link_to 'Back', users_path %>

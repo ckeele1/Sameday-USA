@@ -1,0 +1,14 @@
+<% form_for @building, :html => { :multipart => true } do |f| %>
+	<%= render :partial => 'shared/notice_messages', :locals => { :css_id_prefix => 'building_', :error_messages => f.error_messages } %>
+
+	<fieldset>
+		<legend>Editing Building</legend>
+		<%= render :partial => 'form', :locals => { :f => f } %>
+		<p class="submit">
+			<%= f.submit 'Save'%> or <%= link_to 'cancel', buildings_path %>
+		</p>
+		<div class="administrative-information">
+			<%= label_tag "Last updated:" %> <%= @building.updated_at.strftime("%D %r") %>
+		</div>
+	</fieldset>
+<% end %>

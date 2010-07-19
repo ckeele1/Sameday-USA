@@ -1,0 +1,12 @@
+<tr class="<%= cycle('even','odd') %>">
+	<td><%= '&nbsp;' * 4 * index_category.ancestors.count %><%=h index_category.name %></td>
+	<td><%=h index_category.active? ? "Active" : "Inactive" %></td>
+	<td title="<%= "Places cannot be assigned to primary categories (i.e., categories with sub-categories)" if index_category.places.count > 0 && index_category.children.count > 0 %>" class="numeric <%= "incorrect-categorization" if index_category.places.count > 0 && index_category.children.count > 0 %>"><%=h index_category.places.count %></td>
+	<td class="actions">
+		<%= link_to image_tag('icons/show.png', :alt => 'Show'), category_path(index_category) if edit_categories? %>
+		<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_category_path(index_category) if edit_categories? %>
+		<%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), index_category, :confirm => 'Are you sure?', :method => :delete if destroy_categories? %>
+	</td>
+</tr>
+
+<%= render :partial => 'index_category', :collection => index_category.children unless index_category.children.empty? %>

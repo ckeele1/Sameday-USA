@@ -1,0 +1,11 @@
+<div id='audio'></div>
+
+<script type='text/javascript'>
+  var so = new SWFObject('/flash/player-licensed.swf','mpl','380','24','9');
+  so.addParam('allowfullscreen','true');
+  so.addParam('allowscriptaccess','always');
+  so.addParam('wmode','opaque');
+  so.addVariable('duration','<%=h @place.audio_duration %>');
+  so.addVariable('file','<%= @place.audio.url %>');
+  so.write('audio');
+</script>

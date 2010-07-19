@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	$j(function(){ 
+		$j('input[title!=""]').hint();
+	});
+</script>
+
+<% form_tag request.path, :method => 'get', :class => 'clear' do %>
+	<% filter_fields.each do |filter_field| %>
+		<%= hidden_field_tag "#{filter_field[:label].downcase.parameterize}", '' %>
+	<% end %>
+	<%= submit_tag "Clear" %>
+<% end %>
+
+<% form_tag request.path, :method => 'get' do %>
+	<% filter_fields.each do |filter_field| %>
+		<%= text_field_tag "#{filter_field[:label].downcase.parameterize}", filter_field[:term], :value => filter_field[:term], :title => filter_field[:label] %>
+	<% end %>
+	<%= submit_tag "Filter" %>
+<% end %>

@@ -1,0 +1,30 @@
+<% delay, delay["error"], delay["warning"], delay["notice"], delay["validation"] = Hash.new, 15000, 15000, 1000, 5000 %>
+<% flash[:error] = '' unless flash[:error] %>
+<% flash[:notice] = '' unless flash[:notice] %>
+<% flash[:warning] = '' unless flash[:warning] %>
+
+<% flash.each do |key, msg| %>
+	<% content_tag :div, :style => "#{"display: none;" if msg.blank?}", :id => "#{css_id_prefix}#{key}_message" do %>
+		<%= content_tag :p, msg, :class => "flash" %>
+	<% end %>
+	<% unless msg.blank? %>
+	  <% content_tag :script, :type => "text/javascript" do %>
+	    setTimeout("new Effect.Fade('<%= css_id_prefix %><%= key %>_message');", <%= delay["#{key}"] %>);
+	  <% end %>
+  <% end %>
+<% end %>
+<% flash.discard %>
+
+<% begin %>
+	<% if error_messages %>
+		<% content_tag :div, :style => "#{"display: none;" if error_messages.blank?}", :id => "#{css_id_prefix}validation_message" do %>
+			<%= content_tag :p, error_messages, :class => "flash" %>
+		<% end %>
+		<% unless error_messages.blank? %>
+		  <% content_tag :script, :type => "text/javascript" do %>
+		    setTimeout("new Effect.Fade('<%= css_id_prefix %>validation_message');", <%= delay["validation"] %>);
+		  <% end %>
+		<% end %>
+	<% end %>
+<% rescue %>
+<% end %>
