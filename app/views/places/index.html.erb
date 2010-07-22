@@ -15,7 +15,6 @@
 		<th>Status</th>
 		<th>Open Status</th>
 		<th>Location</th>
-		<th>Building</th>
 		<th>Categories</th>
 		<th>Contact</th>
 		<th class="actions">Actions</th>
@@ -28,7 +27,6 @@
 			<td><%=h place.status? ? "Active" : "Inactive" %></td>
 			<td><%=h place.current_open_status %></td>
 			<td><%=h place.location %></td>
-			<td><%=h place.try(:building).try(:name) || place.building_id %></td>
 			<td><%=h place.categories.collect(&:name).join(', ') %></td>
 			<td><%=h place.owner %></td>
 			<td class="actions">

@@ -48,14 +48,6 @@
 					</ul>
 				<% end %>
 			</li>
-			<li>
-				<%= link_to 'Buildings', buildings_url %>
-				<% if create_buildings? %>
-					<ul>
-						<li><%= link_to 'Create a building', new_building_url %></li>
-					</ul>
-				<% end %>
-			</li>
 			<% if show_users? %>
 				<li>
 					<%= link_to 'Users', users_url %>

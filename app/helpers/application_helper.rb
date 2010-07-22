@@ -88,24 +88,6 @@ module ApplicationHelper
 		allow :owner, :of => Category
 	end
 	
-	access_control :edit_buildings? do
-		allow :administrator
-		allow :editor
-		allow :owner, :of => Building
-	end
-	
-	access_control :destroy_buildings? do
-		allow :administrator
-		allow :editor
-		allow :owner, :of => Building
-	end
-
-	access_control :create_buildings? do
-		allow :administrator
-		allow :editor
-		allow :owner, :of => Building
-	end
-	
 	access_control :edit_places? do
 		allow :administrator
 		allow :editor

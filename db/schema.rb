@@ -11,20 +11,6 @@
 
 ActiveRecord::Schema.define(:version => 20100702133019) do
 
-  create_table "buildings", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "longitude"
-    t.string   "latitude"
-    t.string   "building_code"
-    t.text     "description"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-  end
-
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.integer  "category_id"
@@ -74,7 +60,6 @@ ActiveRecord::Schema.define(:version => 20100702133019) do
     t.string   "latitude"
     t.string   "location"
     t.text     "description"
-    t.string   "building_id"
     t.string   "owner"
     t.string   "menu_link"
     t.text     "payment_methods"
@@ -122,7 +107,7 @@ ActiveRecord::Schema.define(:version => 20100702133019) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username",            :limit => 100, :default => "",   :null => false
+    t.string   "login",               :limit => 100, :default => "",   :null => false
     t.string   "first_name",          :limit => 100
     t.string   "last_name",           :limit => 100
     t.datetime "updated_at"
@@ -130,10 +115,19 @@ ActiveRecord::Schema.define(:version => 20100702133019) do
     t.string   "persistence_token"
     t.boolean  "active",                             :default => true
     t.string   "perishable_token",                   :default => "",   :null => false
+    t.string   "crypted_password",                                     :null => false
+    t.string   "password_salt",                                        :null => false
+    t.integer  "login_count",                        :default => 0,    :null => false
+    t.datetime "last_request_at"
+    t.datetime "last_login_at"
+    t.datetime "current_login_at"
+    t.string   "last_login_ip"
+    t.string   "current_login_ip"
     t.string   "single_access_token"
   end
 
+  add_index "users", ["last_request_at"], :name => "index_users_on_last_request_at"
+  add_index "users", ["login"], :name => "index_users_on_login"
   add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
-  add_index "users", ["username"], :name => "index_users_on_username"
 
 end
