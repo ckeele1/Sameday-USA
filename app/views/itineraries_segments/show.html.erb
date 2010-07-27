@@ -1,0 +1,18 @@
+<p>
+  <b>Itinerary:</b>
+  <%=h @itineraries_segment.itinerary_id %>
+</p>
+
+<p>
+  <b>Segment:</b>
+  <%=h @itineraries_segment.segment_id %>
+</p>
+
+<p>
+  <b>Segment model:</b>
+  <%=h @itineraries_segment.segment_model %>
+</p>
+
+
+<%= link_to 'Edit', edit_itineraries_segment_path(@itineraries_segment) %> |
+<%= link_to 'Back', itineraries_segments_path %>

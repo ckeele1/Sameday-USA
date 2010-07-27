@@ -1,0 +1,22 @@
+<h1>Listing places_numbers</h1>
+
+<table>
+  <tr>
+    <th>Place</th>
+    <th>Number</th>
+  </tr>
+
+<% @places_numbers.each do |places_number| %>
+  <tr>
+    <td><%=h places_number.place_id %></td>
+    <td><%=h places_number.number_id %></td>
+    <td><%= link_to 'Show', places_number %></td>
+    <td><%= link_to 'Edit', edit_places_number_path(places_number) %></td>
+    <td><%= link_to 'Destroy', places_number, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New places_number', new_places_number_path %>

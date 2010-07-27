@@ -1,0 +1,13 @@
+<p>
+  <b>Event:</b>
+  <%=h @events_email.event_id %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @events_email.email_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_events_email_path(@events_email) %> |
+<%= link_to 'Back', events_emails_path %>

@@ -1,0 +1,13 @@
+<p>
+  <b>Event:</b>
+  <%=h @events_website.event_id %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%=h @events_website.website_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_events_website_path(@events_website) %> |
+<%= link_to 'Back', events_websites_path %>

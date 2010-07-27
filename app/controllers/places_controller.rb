@@ -2,9 +2,10 @@ class PlacesController < ApplicationController
 
 	access_control do
 		allow :owner, :of => Place
-		allow anonymous, logged_in, :to => [:show, :index, :index_details]
+		#allow anonymous, logged_in, :to => [:show, :index, :index_details]
 		allow :editor
 		allow :administrator
+		allow anonymous
 	end
 
 	def index
@@ -45,7 +46,7 @@ class PlacesController < ApplicationController
 
 		respond_to do |format|
 			if @place.save
-				@place.convert
+				@place.convert 
 				flash[:notice] = 'Place was successfully created.'
 				format.html { redirect_to(places_path) }
 				format.xml { render :xml => @place, :status => :created, :location => @place }

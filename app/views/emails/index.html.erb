@@ -1,0 +1,23 @@
+<h1>Listing emails</h1>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Email for a</th>
+    <th class="actions">Actions</th>
+  </tr>
+
+<% @emails.each do |email| %>
+  <tr>
+    <td><%=h email.address %></td>
+    <td><%=h email.model_name %></td>
+    <td><%= link_to image_tag('icons/show.png', :alt => 'Show'), email %></td>
+    <td><%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_email_path(email) %></td>
+    <td><%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), email, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New email', new_email_path %>

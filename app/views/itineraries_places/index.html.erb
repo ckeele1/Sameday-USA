@@ -1,0 +1,22 @@
+<h1>Listing itineraries_places</h1>
+
+<table>
+  <tr>
+    <th>Itinerary</th>
+    <th>Place</th>
+  </tr>
+
+<% @itineraries_places.each do |itineraries_place| %>
+  <tr>
+    <td><%=h itineraries_place.itinerary_id %></td>
+    <td><%=h itineraries_place.place_id %></td>
+    <td><%= link_to 'Show', itineraries_place %></td>
+    <td><%= link_to 'Edit', edit_itineraries_place_path(itineraries_place) %></td>
+    <td><%= link_to 'Destroy', itineraries_place, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New itineraries_place', new_itineraries_place_path %>

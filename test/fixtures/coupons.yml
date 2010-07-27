@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  visible: false
+  title: MyString
+  body: MyText
+  place_id: 1
+  start_date: 2010-07-22 15:57:39
+  end_date: 2010-07-22 15:57:39
+  barcode_file_name: MyString
+  barcode_content_type: MyString
+  barcode_file_size: 1
+  barcode_updated_at: 2010-07-22 15:57:39
+
+two:
+  visible: false
+  title: MyString
+  body: MyText
+  place_id: 1
+  start_date: 2010-07-22 15:57:39
+  end_date: 2010-07-22 15:57:39
+  barcode_file_name: MyString
+  barcode_content_type: MyString
+  barcode_file_size: 1
+  barcode_updated_at: 2010-07-22 15:57:39

@@ -7,8 +7,9 @@
 <div id="map">
   <noscript>You should turn on JavaScript</noscript>
 </div>
+<p>Asterisks indicate required fields.</p>
 <p>
-  <%= f.label :name %><br />
+  <%= f.label :name, "Name*" %><br />
   <%= f.text_field :name, :class => 'title' %>
 </p>
 <p>
@@ -50,7 +51,7 @@
   <%= f.text_field :latitude %>
 </p>
 <p>
-  <%= f.label :location %><br />
+  <%= f.label :location, "Location*" %><br />
   <%= f.text_field :location %>
 </p>
 <p>
@@ -62,11 +63,11 @@
   <%= f.select :building_id, Building.all.collect { |b| [ b.name, b.id ] }, { :include_blank => 'None' } %>
 </p>
 <p>
-  <%= f.label :owner, "Contact" %><br />
+  <%= f.label :owner, "Contact*" %><br />
   <%= f.text_field :owner %>
 </p>
 <p>
-  <%= f.label :owner, "Contact Email Address" %><br />
+  <%= f.label :owner, "Contact Email Address*" %><br />
   <%= f.text_field :owner_email_address %>
 </p>
 <p>
@@ -78,7 +79,7 @@
   <%= f.text_area :payment_methods, :class => 'short' %>
 </p>
 <p>
-  <%= f.label :categories %><br />
+  <%= f.label :categories, "Catagories*" %><br />
 	<select id="place_category_ids" name="place[category_ids][]" multiple="multiple">
 	  <%= expand_tree_into_select_field(Category.top, @place.categories.collect(&:id_s)) %>
 	</select>

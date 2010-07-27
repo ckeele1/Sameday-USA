@@ -1,0 +1,13 @@
+<p>
+  <b>Place:</b>
+  <%=h @places_email.place_id %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @places_email.email_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_places_email_path(@places_email) %> |
+<%= link_to 'Back', places_emails_path %>

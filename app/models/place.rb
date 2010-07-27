@@ -71,7 +71,7 @@ class Place < ActiveRecord::Base
 	def current_open_status
 		# Sort the Hour::DAYS array relative to the current day.
 		hour_days = Hour::DAYS
-		until hour_days[0]["order"] == Time.now.strftime("%u").to_i
+		until hour_days[0]["order"] == Time.now.strftime("%w").to_i+1
 			hour_days.push hour_days.shift
 		end
 

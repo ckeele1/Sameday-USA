@@ -56,6 +56,27 @@
 					</ul>
 				<% end %>
 			</li>
+			<% if true %>
+				<li>
+					Properties
+					<ul>
+						<li><%= link_to 'Coupons', coupons_url %></li>
+						<li><%= link_to 'Emails', emails_url %></li>
+						<li><%= link_to 'Hours', hours_url %></li>
+						<li><%= link_to 'Numbers', numbers_url %></li>
+						<li><%= link_to 'Websites', websites_url %></li>
+					</ul>
+				</li>
+			<% end %>
+			<% if true %>
+				<li>
+					<%= link_to 'Itineraries', itineraries_url %>
+					<ul>
+						<li><%= link_to 'Places', places_url %></li>
+						<li><%= link_to 'Events', events_url %></li>
+					</ul>
+				</li>
+			<% end%>
 			<% if show_users? %>
 				<li>
 					<%= link_to 'Users', users_url %>

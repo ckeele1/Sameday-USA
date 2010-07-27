@@ -1,0 +1,18 @@
+<p>
+  <b>Address:</b>
+  <%=h @website.address %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @website.title %>
+</p>
+
+<p>
+  <b>Webiste for:</b>
+  <%=h @website.model_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_website_path(@website) %> |
+<%= link_to 'Back', websites_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  itinerary_id: 1
+  segment_id: 1
+  segment_model: MyString
+
+two:
+  itinerary_id: 1
+  segment_id: 1
+  segment_model: MyString
