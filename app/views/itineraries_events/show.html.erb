@@ -1,0 +1,13 @@
+<p>
+  <b>Itinerary:</b>
+  <%=h @itineraries_event.itinerary_id %>
+</p>
+
+<p>
+  <b>Place:</b>
+  <%=h @itineraries_event.place_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_itineraries_event_path(@itineraries_event) %> |
+<%= link_to 'Back', itineraries_events_path %>

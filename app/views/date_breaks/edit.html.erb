@@ -1,0 +1,16 @@
+<h1>Editing date_break</h1>
+
+<% form_for(@date_break) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :time_slot %><br />
+    <%= f.datetime_select :time_slot %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @date_break %> |
+<%= link_to 'Back', date_breaks_path %>

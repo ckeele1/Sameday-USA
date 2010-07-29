@@ -1,0 +1,52 @@
+<p>
+  <b>Visible:</b>
+  <%=h @coupon.visible %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @coupon.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @coupon.body %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @coupon.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @coupon.end_date %>
+</p>
+
+<p>
+  <b>Barcode file name:</b>
+  <%=h @coupon.barcode_file_name %>
+</p>
+
+<p>
+  <b>Barcode content type:</b>
+  <%=h @coupon.barcode_content_type %>
+</p>
+
+<p>
+  <b>Barcode file size:</b>
+  <%=h @coupon.barcode_file_size %>
+</p>
+
+<p>
+  <b>Barcode updated at:</b>
+  <%=h @coupon.barcode_updated_at %>
+</p>
+<p>
+	<b>Coupon for:</b>
+	<%=h @coupon.model_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_coupon_path(@coupon) %> |
+<%= link_to 'Back', coupons_path %>

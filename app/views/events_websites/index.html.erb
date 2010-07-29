@@ -1,0 +1,22 @@
+<h1>Listing events_websites</h1>
+
+<table>
+  <tr>
+    <th>Event</th>
+    <th>Website</th>
+  </tr>
+
+<% @events_websites.each do |events_website| %>
+  <tr>
+    <td><%=h events_website.event_id %></td>
+    <td><%=h events_website.website_id %></td>
+    <td><%= link_to 'Show', events_website %></td>
+    <td><%= link_to 'Edit', edit_events_website_path(events_website) %></td>
+    <td><%= link_to 'Destroy', events_website, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New events_website', new_events_website_path %>

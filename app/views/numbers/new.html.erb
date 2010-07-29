@@ -1,0 +1,35 @@
+<h1>New number</h1>
+
+<% form_for(@number) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :number %><br />
+    <%= f.text_field :number %>
+  </p>
+  <p>
+    <%= f.label :extension %><br />
+    <%= f.text_field :extension %>
+  </p>
+  <p>
+    <%= f.label :device_id, "Device Type:" %><br />
+    <% Device.all.each do |device| %>
+  		<%= f.radio_button :device_id, device.id %>
+    	<%= f.label :device_id_choice, "#{device.name}" %><br />
+    <% end %>	
+  </p>
+  <p>
+  	<%= f.label :model_name, "This is a number for..." %><br />
+  	<%= f.radio_button :model_name, "place"%>
+  	<%= f.label :model_name_place, "a place"%><br />
+  	<%= f.radio_button :model_name, "event"%>
+  	<%= f.label :model_name_event, "an event"%><br />
+  	<%= f.radio_button :model_name, "none"%>
+  	<%= f.label :model_name_blank, "I'll decide later"%><br />
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', numbers_path %>

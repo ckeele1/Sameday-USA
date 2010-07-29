@@ -1,0 +1,28 @@
+<h1>New website</h1>
+
+<% form_for(@website) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+  	<%= f.label :model_name, "This is a website for..." %><br />
+  	<%= f.radio_button :model_name, "place"%>
+  	<%= f.label :model_name_place, "a place"%><br />
+  	<%= f.radio_button :model_name, "event"%>
+  	<%= f.label :model_name_event, "an event"%><br />
+  	<%= f.radio_button :model_name, "none"%>
+  	<%= f.label :model_name_blank, "I'll decide later"%><br />
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', websites_path %>

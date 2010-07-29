@@ -1,0 +1,19 @@
+<h1>New events_number</h1>
+
+<% form_for(@events_number) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :event_id %><br />
+    <%= f.text_field :event_id %>
+  </p>
+  <p>
+    <%= f.label :number_id %><br />
+    <%= f.text_field :number_id %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', events_numbers_path %>

@@ -1,0 +1,38 @@
+<p>
+  <b>Start date:</b>
+  <%=h @hour.start_date %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%=h @hour.start_time %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @hour.end_date %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%=h @hour.end_time %>
+</p>
+
+<p>
+  <b>Days:</b>
+  <%=h @hour.days %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @hour.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%=h @hour.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_hour_path(@hour) %> |
+<%= link_to 'Back', hours_path %>

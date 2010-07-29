@@ -1,0 +1,22 @@
+<h1>Listing places_websites</h1>
+
+<table>
+  <tr>
+    <th>Place</th>
+    <th>Website</th>
+  </tr>
+
+<% @places_websites.each do |places_website| %>
+  <tr>
+    <td><%=h places_website.place_id %></td>
+    <td><%=h places_website.website_id %></td>
+    <td><%= link_to 'Show', places_website %></td>
+    <td><%= link_to 'Edit', edit_places_website_path(places_website) %></td>
+    <td><%= link_to 'Destroy', places_website, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New places_website', new_places_website_path %>

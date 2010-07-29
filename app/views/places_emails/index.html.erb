@@ -1,0 +1,22 @@
+<h1>Listing places_emails</h1>
+
+<table>
+  <tr>
+    <th>Place</th>
+    <th>Email</th>
+  </tr>
+
+<% @places_emails.each do |places_email| %>
+  <tr>
+    <td><%=h places_email.place_id %></td>
+    <td><%=h places_email.email_id %></td>
+    <td><%= link_to 'Show', places_email %></td>
+    <td><%= link_to 'Edit', edit_places_email_path(places_email) %></td>
+    <td><%= link_to 'Destroy', places_email, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New places_email', new_places_email_path %>

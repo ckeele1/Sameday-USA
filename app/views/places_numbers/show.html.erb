@@ -1,0 +1,13 @@
+<p>
+  <b>Place:</b>
+  <%=h @places_number.place_id %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%=h @places_number.number_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_places_number_path(@places_number) %> |
+<%= link_to 'Back', places_numbers_path %>

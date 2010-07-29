@@ -1,0 +1,23 @@
+<p>
+  <b>Number:</b>
+  <%=h @number.number %>
+</p>
+
+<p>
+  <b>Extension:</b>
+  <%=h @number.extension %>
+</p>
+
+<p>
+  <b>Device:</b>
+  <%=h Device.find_by_id(@number.device_id).name %>
+</p>
+
+<p>
+  <b>Number for a:</b>
+  <%=h @number.model_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_number_path(@number) %> |
+<%= link_to 'Back', numbers_path %>

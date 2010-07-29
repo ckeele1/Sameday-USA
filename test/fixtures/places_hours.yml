@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  hour_id: 1
+  coupon_id: 1
+
+two:
+  hour_id: 1
+  coupon_id: 1

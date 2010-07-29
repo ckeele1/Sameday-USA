@@ -1,0 +1,20 @@
+<h1>Editing itineraries_place</h1>
+
+<% form_for(@itineraries_place) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :itinerary_id %><br />
+    <%= f.text_field :itinerary_id %>
+  </p>
+  <p>
+    <%= f.label :place_id %><br />
+    <%= f.text_field :place_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @itineraries_place %> |
+<%= link_to 'Back', itineraries_places_path %>

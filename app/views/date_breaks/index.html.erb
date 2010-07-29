@@ -1,0 +1,20 @@
+<h1>Listing date_breaks</h1>
+
+<table>
+  <tr>
+    <th>Time slot</th>
+  </tr>
+
+<% @date_breaks.each do |date_break| %>
+  <tr>
+    <td><%=h date_break.time_slot %></td>
+    <td><%= link_to 'Show', date_break %></td>
+    <td><%= link_to 'Edit', edit_date_break_path(date_break) %></td>
+    <td><%= link_to 'Destroy', date_break, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New date_break', new_date_break_path %>
