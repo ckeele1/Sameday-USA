@@ -1,0 +1,20 @@
+<h1>Editing events_itinerary</h1>
+
+<% form_for(@events_itinerary) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :itinerary_id %><br />
+    <%= f.text_field :itinerary_id %>
+  </p>
+  <p>
+    <%= f.label :event_id %><br />
+    <%= f.text_field :event_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @events_itinerary %> |
+<%= link_to 'Back', events_itineraries_path %>

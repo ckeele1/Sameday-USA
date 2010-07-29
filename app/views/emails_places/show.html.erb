@@ -1,0 +1,13 @@
+<p>
+  <b>Place:</b>
+  <%=h @emails_place.place_id %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @emails_place.email_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_emails_place_path(@emails_place) %> |
+<%= link_to 'Back', emails_places_path %>

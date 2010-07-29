@@ -1,24 +1,28 @@
-<h1>Listing websites</h1>
+<h2>Websites</h2>
 
 <table>
-  <tr>
+  thead
     <th>Address</th>
     <th>Title</th>
-    <th>Webiste for</th>
     <th class="actions">Actions</th>
-  </tr>
+  </thead>
 
 <% @websites.each do |website| %>
-  <tr>
-    <td><%=h website.address %></td>
-    <td><%=h website.title %></td>
-    <td><%=h website.model_name %></td>
-    <td><%= link_to image_tag('icons/show.png', :alt => 'Show'), website %></td>
-    <td><%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_website_path(website) %></td>
-    <td><%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), website, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<tbody>
+		<tr class="<%= cycle('even','odd') %>">
+		    <td><%=h website.address %></td>
+		    <td><%=h website.title %></td>
+		    <td class="actions">
+		    	<%= link_to image_tag('icons/show.png', :alt => 'Show'), website %>
+		    	<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_website_path(website) %>
+		    	<%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), website, :confirm => 'Are you sure?', :method => :delete %>
+		    </td>
+		  </tr>
+	</tbody>
 <% end %>
 </table>
+
+<%= will_paginate @websites %>
 
 <br />
 

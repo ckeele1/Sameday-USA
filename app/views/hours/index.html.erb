@@ -1,7 +1,7 @@
-<h1>Listing hours</h1>
+<h2>Hours</h2>
 
 <table>
-  <tr>
+  <thead>
     <th>Start date</th>
     <th>Start time</th>
     <th>End date</th>
@@ -9,23 +9,30 @@
     <th>Days</th>
     <th>Created at</th>
     <th>Updated at</th>
-  </tr>
+    <th class="actions">Actions</th>
+  </thead>
 
 <% @hours.each do |hour| %>
-  <tr>
-    <td><%=h hour.start_date %></td>
-    <td><%=h hour.start_time %></td>
-    <td><%=h hour.end_date %></td>
-    <td><%=h hour.end_time %></td>
-    <td><%=h hour.days %></td>
-    <td><%=h hour.created_at %></td>
-    <td><%=h hour.updated_at %></td>
-    <td><%= link_to 'Show', hour %></td>
-    <td><%= link_to 'Edit', edit_hour_path(hour) %></td>
-    <td><%= link_to 'Destroy', hour, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<tbody>
+		<tr class="<%= cycle('even','odd') %>">
+		    <td><%=h hour.start_date %></td>
+		    <td><%=h hour.start_time %></td>
+		    <td><%=h hour.end_date %></td>
+		    <td><%=h hour.end_time %></td>
+		    <td><%=h hour.days %></td>
+		    <td><%=h hour.created_at %></td>
+		    <td><%=h hour.updated_at %></td>
+		    <td class="actions">
+		    	<%= link_to image_tag('icons/show.png', :alt => 'Show'), hour %>
+		    	<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_hour_path(hour) %>
+		    	<%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), hour, :confirm => 'Are you sure?', :method => :delete %>
+	    	</td>
+		  </tr>
+	</tbody>
 <% end %>
 </table>
+
+<%= will_paginate @hours %>
 
 <br />
 

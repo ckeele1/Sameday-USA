@@ -1,0 +1,20 @@
+<h1>Editing date_breaks_itinerary</h1>
+
+<% form_for(@date_breaks_itinerary) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :itinerary_id %><br />
+    <%= f.text_field :itinerary_id %>
+  </p>
+  <p>
+    <%= f.label :date_break_id %><br />
+    <%= f.text_field :date_break_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @date_breaks_itinerary %> |
+<%= link_to 'Back', date_breaks_itineraries_path %>

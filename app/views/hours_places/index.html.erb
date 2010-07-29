@@ -1,0 +1,22 @@
+<h1>Listing hours_places</h1>
+
+<table>
+  <tr>
+    <th>Place</th>
+    <th>Hour</th>
+  </tr>
+
+<% @hours_places.each do |hours_place| %>
+  <tr>
+    <td><%=h hours_place.place_id %></td>
+    <td><%=h hours_place.hour_id %></td>
+    <td><%= link_to 'Show', hours_place %></td>
+    <td><%= link_to 'Edit', edit_hours_place_path(hours_place) %></td>
+    <td><%= link_to 'Destroy', hours_place, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New hours_place', new_hours_place_path %>

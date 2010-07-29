@@ -1,22 +1,26 @@
-<h1>Listing emails</h1>
+<h2>Emails</h2>
 
 <table>
-  <tr>
+  <thead>
     <th>Address</th>
-    <th>Email for a</th>
     <th class="actions">Actions</th>
-  </tr>
+  </thead>
 
 <% @emails.each do |email| %>
-  <tr>
-    <td><%=h email.address %></td>
-    <td><%=h email.model_name %></td>
-    <td><%= link_to image_tag('icons/show.png', :alt => 'Show'), email %></td>
-    <td><%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_email_path(email) %></td>
-    <td><%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), email, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<tbody>
+		<tr class="<%= cycle('even','odd') %>">
+		    <td><%=h email.address %></td>
+		    <td class="actions">
+		    	<%= link_to image_tag('icons/show.png', :alt => 'Show'), email %>
+		    	<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_email_path(email) %>
+		    	<%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), email, :confirm => 'Are you sure?', :method => :delete %>
+	    	</td>
+		 </tr>
+	</tbody>
 <% end %>
 </table>
+
+<%= will_paginate @emails %>
 
 <br />
 

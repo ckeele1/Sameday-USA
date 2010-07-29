@@ -1,0 +1,20 @@
+<h1>Editing numbers_place</h1>
+
+<% form_for(@numbers_place) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :place_id %><br />
+    <%= f.text_field :place_id %>
+  </p>
+  <p>
+    <%= f.label :number_id %><br />
+    <%= f.text_field :number_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @numbers_place %> |
+<%= link_to 'Back', numbers_places_path %>

@@ -1,7 +1,6 @@
 class Hour < ActiveRecord::Base
 
-	belongs_to :place
-	
+	has_and_belongs_to_many :places
 	validates_presence_of :start_date, :start_time, :end_time, :days
 
 	def days_mon

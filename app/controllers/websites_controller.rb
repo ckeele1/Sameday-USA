@@ -3,7 +3,7 @@ class WebsitesController < ApplicationController
     @websites = Website.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { @websites = @websites.paginate :page => params[:page], :per_page => 20 }
       format.xml  { render :xml => @websites }
     end
   end

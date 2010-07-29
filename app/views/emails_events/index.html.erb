@@ -1,0 +1,22 @@
+<h1>Listing emails_events</h1>
+
+<table>
+  <tr>
+    <th>Event</th>
+    <th>Email</th>
+  </tr>
+
+<% @emails_events.each do |emails_event| %>
+  <tr>
+    <td><%=h emails_event.event_id %></td>
+    <td><%=h emails_event.email_id %></td>
+    <td><%= link_to 'Show', emails_event %></td>
+    <td><%= link_to 'Edit', edit_emails_event_path(emails_event) %></td>
+    <td><%= link_to 'Destroy', emails_event, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New emails_event', new_emails_event_path %>

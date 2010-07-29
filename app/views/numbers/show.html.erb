@@ -13,11 +13,6 @@
   <%=h Device.find_by_id(@number.device_id).name %>
 </p>
 
-<p>
-  <b>Number for a:</b>
-  <%=h @number.model_name %>
-</p>
-
 
 <%= link_to 'Edit', edit_number_path(@number) %> |
 <%= link_to 'Back', numbers_path %>

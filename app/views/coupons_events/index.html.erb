@@ -1,0 +1,22 @@
+<h1>Listing coupons_events</h1>
+
+<table>
+  <tr>
+    <th>Event</th>
+    <th>Coupon</th>
+  </tr>
+
+<% @coupons_events.each do |coupons_event| %>
+  <tr>
+    <td><%=h coupons_event.event_id %></td>
+    <td><%=h coupons_event.coupon_id %></td>
+    <td><%= link_to 'Show', coupons_event %></td>
+    <td><%= link_to 'Edit', edit_coupons_event_path(coupons_event) %></td>
+    <td><%= link_to 'Destroy', coupons_event, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New coupons_event', new_coupons_event_path %>

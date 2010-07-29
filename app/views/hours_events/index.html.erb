@@ -1,0 +1,22 @@
+<h1>Listing hours_events</h1>
+
+<table>
+  <tr>
+    <th>Event</th>
+    <th>Hour</th>
+  </tr>
+
+<% @hours_events.each do |hours_event| %>
+  <tr>
+    <td><%=h hours_event.event_id %></td>
+    <td><%=h hours_event.hour_id %></td>
+    <td><%= link_to 'Show', hours_event %></td>
+    <td><%= link_to 'Edit', edit_hours_event_path(hours_event) %></td>
+    <td><%= link_to 'Destroy', hours_event, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New hours_event', new_hours_event_path %>

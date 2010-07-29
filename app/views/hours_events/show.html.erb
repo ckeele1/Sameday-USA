@@ -1,0 +1,13 @@
+<p>
+  <b>Event:</b>
+  <%=h @hours_event.event_id %>
+</p>
+
+<p>
+  <b>Hour:</b>
+  <%=h @hours_event.hour_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_hours_event_path(@hours_event) %> |
+<%= link_to 'Back', hours_events_path %>

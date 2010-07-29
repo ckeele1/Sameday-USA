@@ -1,0 +1,13 @@
+<p>
+  <b>Itinerary:</b>
+  <%=h @date_breaks_itinerary.itinerary_id %>
+</p>
+
+<p>
+  <b>Date break:</b>
+  <%=h @date_breaks_itinerary.date_break_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_date_breaks_itinerary_path(@date_breaks_itinerary) %> |
+<%= link_to 'Back', date_breaks_itineraries_path %>

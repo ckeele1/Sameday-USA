@@ -1,4 +1,22 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :date_breaks_itineraries
+
+  map.resources :events_itineraries
+
+  map.resources :hours_events
+
+  map.resources :numbers_places
+
+  map.resources :emails_places
+
+  map.resources :coupons_places
+
+  map.resources :emails_events
+
+  map.resources :coupons_events
+
+  map.resources :hours_places
+
   map.resources :itineraries
 
   map.resources :events

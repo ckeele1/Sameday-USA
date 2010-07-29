@@ -5,7 +5,7 @@ class EmailsController < ApplicationController
     @emails = Email.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { @emails = @emails.paginate :page => params[:page], :per_page => 20 }
       format.xml  { render :xml => @emails }
     end
   end

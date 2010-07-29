@@ -1,0 +1,13 @@
+<p>
+  <b>Place:</b>
+  <%=h @hours_place.place_id %>
+</p>
+
+<p>
+  <b>Hour:</b>
+  <%=h @hours_place.hour_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_hours_place_path(@hours_place) %> |
+<%= link_to 'Back', hours_places_path %>

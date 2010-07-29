@@ -1,0 +1,13 @@
+<p>
+  <b>Event:</b>
+  <%=h @coupons_event.event_id %>
+</p>
+
+<p>
+  <b>Coupon:</b>
+  <%=h @coupons_event.coupon_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_coupons_event_path(@coupons_event) %> |
+<%= link_to 'Back', coupons_events_path %>

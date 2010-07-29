@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     @events = Event.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { @events = @events.paginate :page => params[:page], :per_page => 20 }
       format.xml  { render :xml => @events }
     end
   end

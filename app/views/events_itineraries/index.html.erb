@@ -1,0 +1,22 @@
+<h1>Listing events_itineraries</h1>
+
+<table>
+  <tr>
+    <th>Itinerary</th>
+    <th>Event</th>
+  </tr>
+
+<% @events_itineraries.each do |events_itinerary| %>
+  <tr>
+    <td><%=h events_itinerary.itinerary_id %></td>
+    <td><%=h events_itinerary.event_id %></td>
+    <td><%= link_to 'Show', events_itinerary %></td>
+    <td><%= link_to 'Edit', edit_events_itinerary_path(events_itinerary) %></td>
+    <td><%= link_to 'Destroy', events_itinerary, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New events_itinerary', new_events_itinerary_path %>

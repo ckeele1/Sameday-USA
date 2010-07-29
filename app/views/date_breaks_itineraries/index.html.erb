@@ -1,0 +1,22 @@
+<h1>Listing date_breaks_itineraries</h1>
+
+<table>
+  <tr>
+    <th>Itinerary</th>
+    <th>Date break</th>
+  </tr>
+
+<% @date_breaks_itineraries.each do |date_breaks_itinerary| %>
+  <tr>
+    <td><%=h date_breaks_itinerary.itinerary_id %></td>
+    <td><%=h date_breaks_itinerary.date_break_id %></td>
+    <td><%= link_to 'Show', date_breaks_itinerary %></td>
+    <td><%= link_to 'Edit', edit_date_breaks_itinerary_path(date_breaks_itinerary) %></td>
+    <td><%= link_to 'Destroy', date_breaks_itinerary, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New date_breaks_itinerary', new_date_breaks_itinerary_path %>

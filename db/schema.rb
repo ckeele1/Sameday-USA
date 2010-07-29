@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100726202714) do
+ActiveRecord::Schema.define(:version => 20100728132427) do
 
   create_table "buildings", :force => true do |t|
     t.string   "name"
@@ -53,8 +53,29 @@ ActiveRecord::Schema.define(:version => 20100726202714) do
     t.datetime "updated_at"
   end
 
+  create_table "coupons_events", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "coupon_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "coupons_places", :force => true do |t|
+    t.integer  "place_id"
+    t.integer  "coupon_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "date_breaks", :force => true do |t|
     t.datetime "time_slot"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "date_breaks_itineraries", :force => true do |t|
+    t.integer  "itinerary_id"
+    t.integer  "date_break_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -67,6 +88,20 @@ ActiveRecord::Schema.define(:version => 20100726202714) do
 
   create_table "emails", :force => true do |t|
     t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "emails_events", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "email_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "emails_places", :force => true do |t|
+    t.integer  "place_id"
+    t.integer  "email_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -95,6 +130,13 @@ ActiveRecord::Schema.define(:version => 20100726202714) do
   create_table "events_hours", :force => true do |t|
     t.integer  "event_id"
     t.integer  "hour_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events_itineraries", :force => true do |t|
+    t.integer  "itinerary_id"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -134,6 +176,20 @@ ActiveRecord::Schema.define(:version => 20100726202714) do
     t.date     "end_date"
     t.time     "end_time"
     t.string   "days"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hours_events", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "hour_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hours_places", :force => true do |t|
+    t.integer  "place_id"
+    t.integer  "hour_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -181,6 +237,13 @@ ActiveRecord::Schema.define(:version => 20100726202714) do
     t.datetime "updated_at"
   end
 
+  create_table "numbers_places", :force => true do |t|
+    t.integer  "place_id"
+    t.integer  "number_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "places", :force => true do |t|
     t.string   "name"
     t.string   "url"
@@ -223,13 +286,6 @@ ActiveRecord::Schema.define(:version => 20100726202714) do
   create_table "places_emails", :force => true do |t|
     t.integer  "place_id"
     t.integer  "email_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "places_hours", :force => true do |t|
-    t.integer  "place_id"
-    t.integer  "hour_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

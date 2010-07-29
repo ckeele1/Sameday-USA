@@ -1,0 +1,20 @@
+<h1>Editing emails_place</h1>
+
+<% form_for(@emails_place) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :place_id %><br />
+    <%= f.text_field :place_id %>
+  </p>
+  <p>
+    <%= f.label :email_id %><br />
+    <%= f.text_field :email_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @emails_place %> |
+<%= link_to 'Back', emails_places_path %>

@@ -1,0 +1,20 @@
+<h1>Editing coupons_place</h1>
+
+<% form_for(@coupons_place) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :place_id %><br />
+    <%= f.text_field :place_id %>
+  </p>
+  <p>
+    <%= f.label :coupon_id %><br />
+    <%= f.text_field :coupon_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @coupons_place %> |
+<%= link_to 'Back', coupons_places_path %>

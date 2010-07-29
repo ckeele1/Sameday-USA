@@ -1,25 +1,30 @@
-<h1>Listing numbers</h1>
+<h2>Numbers</h2>
 
 <table>
-  <tr>
+  <thead>
     <th>Number</th>
     <th>Extension</th>
     <th>Device</th>
-    <th>Place</th>
     <th class="actions">Actions</th>
-  </tr>
+  </thead>
 
 <% @numbers.each do |number| %>
-  <tr>
-    <td><%=h number.number %></td>
-    <td><%=h number.extension %></td>
-    <td><%=h Device.find_by_number(@number.device_id).name %></td>
-    <td><%= link_to image_tag('icons/show.png', :alt => 'Show'), number %></td>
-    <td><%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_number_path(number) %></td>
-    <td><%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), number, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<tbody>
+		<tr class="<%= cycle('even','odd') %>">
+		    <td><%=h number.number %></td>
+		    <td><%=h number.extension %></td>
+		    <td><%=h Device.find_by_id(number.device_id).name %></td>
+		    <td class="actions">
+		    	<%= link_to image_tag('icons/show.png', :alt => 'Show'), number %>
+		    	<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_number_path(number) %>
+		    	<%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), number, :confirm => 'Are you sure?', :method => :delete %>
+		    </td>
+		  </tr>
+	</tbody>
 <% end %>
 </table>
+
+<%= will_paginate @numbers %>
 
 <br />
 

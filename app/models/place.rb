@@ -1,6 +1,7 @@
 class Place < ActiveRecord::Base
+	has_and_belongs_to_many :itineraries
 	has_and_belongs_to_many :categories
-	has_many :hours, :dependent => :destroy
+	has_and_belongs_to_many :hours
 
 	has_many :tour_stops
 	has_many :tours, :through => :tour_stops

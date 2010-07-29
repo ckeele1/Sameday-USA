@@ -5,7 +5,7 @@ class ItinerariesController < ApplicationController
     @itineraries = Itinerary.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { @itineraries = @itineraries.paginate :page => params[:page], :per_page => 20 }
       format.xml  { render :xml => @itineraries }
     end
   end

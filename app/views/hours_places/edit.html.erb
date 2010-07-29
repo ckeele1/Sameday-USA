@@ -1,0 +1,20 @@
+<h1>Editing hours_place</h1>
+
+<% form_for(@hours_place) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :place_id %><br />
+    <%= f.text_field :place_id %>
+  </p>
+  <p>
+    <%= f.label :hour_id %><br />
+    <%= f.text_field :hour_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @hours_place %> |
+<%= link_to 'Back', hours_places_path %>

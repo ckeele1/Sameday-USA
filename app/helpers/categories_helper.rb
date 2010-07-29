@@ -1,7 +1,7 @@
 module CategoriesHelper
-	
+
 	# XML Helpers
-	
+
 	def walk_through_children(xml, category)
 		category.children.each do |child|
 			xml.TCCategory do

@@ -1,19 +1,26 @@
-<h1>Listing itineraries</h1>
+<h2>Itineraries</h2>
 
 <table>
-  <tr>
+  <thead>
     <th>Name</th>
-  </tr>
+    <th class="actions">Actions</th>
+  </thead>
 
 <% @itineraries.each do |itinerary| %>
-  <tr>
-    <td><%=h itinerary.name %></td>
-    <td><%= link_to 'Show', itinerary %></td>
-    <td><%= link_to 'Edit', edit_itinerary_path(itinerary) %></td>
-    <td><%= link_to 'Destroy', itinerary, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<tbody>
+		<tr class="<%= cycle('even','odd') %>">
+			<td><%=h itinerary.name %></td>
+			<td class="actions">
+				<%= link_to image_tag('icons/show.png', :alt => 'Show'), itinerary %>
+		    	<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_itinerary_path(itinerary) %>
+		    	<%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), itinerary, :confirm => 'Are you sure?', :method => :delete %>
+	    	</td>
+	  	</tr>
+	</tbody>
 <% end %>
 </table>
+
+<%= will_paginate @itineraries %>
 
 <br />
 
