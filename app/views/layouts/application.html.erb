@@ -52,6 +52,14 @@
 					</ul>
 				</li>
 			<% end %>
+			<li>
+				<%= link_to 'Places', places_url %>
+				<% if create_places? %>
+					<ul>
+						<li><%= link_to 'Create a place', new_place_url %></li>
+					</ul>
+				<% end %>
+			</li>
 			<% if show_users? %>
 				<li>
 					<%= link_to 'Users', users_url %>
@@ -68,14 +76,6 @@
 					<ul>
 						<li><%= link_to 'Create a category', new_category_url %></li>
 						<li><%= link_to 'Sort categories', sort_categories_categories_url %></li>
-					</ul>
-				<% end %>
-			</li>
-			<li>
-				<%= link_to 'Buildings', buildings_url %>
-				<% if create_buildings? %>
-					<ul>
-						<li><%= link_to 'Create a building', new_building_url %></li>
 					</ul>
 				<% end %>
 			</li>

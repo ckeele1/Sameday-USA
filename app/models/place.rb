@@ -3,10 +3,10 @@ class Place < ActiveRecord::Base
 	has_and_belongs_to_many :categories
 	has_and_belongs_to_many :hours
 
-	has_many :tour_stops
-	has_many :tours, :through => :tour_stops
-
-	belongs_to :building
+  has_many :numbers
+  has_many :websites
+  has_many :emails
+  has_many :coupons
 
 	has_attached_file :photo, :styles => { :medium => "300x300>", :mobile => "300x300>", :thumbnail => "100x100>", :tour => "300x300>" }
 	has_attached_file :audio, :default_url => ''
@@ -16,7 +16,7 @@ class Place < ActiveRecord::Base
 	validates_attachment_content_type :audio, :content_type => [ 'application/mp3', 'application/x-mp3', 'audio/mpeg', 'audio/mp3' ], :allow_blank => true
 	validates_attachment_size :audio, :less_than => 30.megabytes, :unless => Proc.new { |p| p.audio }
 
-	validates_presence_of :name
+	validates_presence_of :name, :state_id, :county_id, :address_line_1, :city, :zipcode
 	
 	default_scope :order => 'places.name ASC'
 

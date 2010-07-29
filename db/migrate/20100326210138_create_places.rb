@@ -9,7 +9,6 @@ class CreatePlaces < ActiveRecord::Migration
       t.float :latitude
       t.string :location
       t.text :description
-      t.string :building_id
       t.string :owner
       t.string :menu_link
       t.text :payment_methods

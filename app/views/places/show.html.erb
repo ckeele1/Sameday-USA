@@ -64,11 +64,6 @@
 </p>
 
 <p>
-  <%= label_tag "Building" %>
-  <%=h @place.try(:building).try(:name) || @place.building_id %>
-</p>
-
-<p>
   <%= label_tag "Owner" %><br />
   <%=h @place.owner %><br />
 	<%=h @place.owner_email_address %>
