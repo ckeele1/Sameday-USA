@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :groups_tables
+
+  map.resources :groups
+
   map.resources :date_breaks_itineraries
 
   map.resources :events_itineraries

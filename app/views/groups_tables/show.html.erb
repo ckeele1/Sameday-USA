@@ -1,0 +1,23 @@
+<p>
+  <b>User:</b>
+  <%=h @groups_table.user_id %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%=h @groups_table.group_id %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @groups_table.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%=h @groups_table.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_groups_table_path(@groups_table) %> |
+<%= link_to 'Back', groups_tables_path %>

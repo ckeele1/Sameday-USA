@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  authorizable_type: MyString
+  authorizable_id: 1
+  created_at: 2010-08-01 10:57:07
+  updated_at: 2010-08-01 10:57:07
+
+two:
+  name: MyString
+  authorizable_type: MyString
+  authorizable_id: 1
+  created_at: 2010-08-01 10:57:07
+  updated_at: 2010-08-01 10:57:07

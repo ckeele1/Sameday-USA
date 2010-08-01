@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100728132427) do
+ActiveRecord::Schema.define(:version => 20100729204439) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -23,20 +23,6 @@ ActiveRecord::Schema.define(:version => 20100728132427) do
   create_table "categories_places", :id => false, :force => true do |t|
     t.integer "category_id"
     t.integer "place_id"
-  end
-
-  create_table "coupons", :force => true do |t|
-    t.boolean  "visible"
-    t.string   "title"
-    t.text     "body"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.string   "barcode_file_name"
-    t.string   "barcode_content_type"
-    t.integer  "barcode_file_size"
-    t.datetime "barcode_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "coupons_events", :force => true do |t|
@@ -66,18 +52,6 @@ ActiveRecord::Schema.define(:version => 20100728132427) do
     t.datetime "updated_at"
   end
 
-  create_table "devices", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "emails", :force => true do |t|
-    t.string   "address"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "emails_events", :force => true do |t|
     t.integer  "event_id"
     t.integer  "email_id"
@@ -95,27 +69,6 @@ ActiveRecord::Schema.define(:version => 20100728132427) do
   create_table "events", :force => true do |t|
     t.string   "name"
     t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "events_coupons", :force => true do |t|
-    t.integer  "event_id"
-    t.integer  "coupon_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "events_emails", :force => true do |t|
-    t.integer  "event_id"
-    t.integer  "email_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "events_hours", :force => true do |t|
-    t.integer  "event_id"
-    t.integer  "hour_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -186,39 +139,9 @@ ActiveRecord::Schema.define(:version => 20100728132427) do
     t.datetime "updated_at"
   end
 
-  create_table "itineraries_date_breaks", :force => true do |t|
-    t.integer  "itinerary_id"
-    t.integer  "date_break_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "itineraries_events", :force => true do |t|
-    t.integer  "itinerary_id"
-    t.integer  "place_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "itineraries_places", :force => true do |t|
     t.integer  "itinerary_id"
     t.integer  "place_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "itineraries_segments", :force => true do |t|
-    t.integer  "itinerary_id"
-    t.integer  "segment_id"
-    t.string   "segment_model"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "numbers", :force => true do |t|
-    t.string   "number"
-    t.integer  "extension"
-    t.integer  "device_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -259,27 +182,6 @@ ActiveRecord::Schema.define(:version => 20100728132427) do
     t.string   "aasm_state",             :default => "pending"
     t.string   "video_file_name_mobile"
     t.string   "owner_email_address"
-  end
-
-  create_table "places_coupons", :force => true do |t|
-    t.integer  "place_id"
-    t.integer  "coupon_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "places_emails", :force => true do |t|
-    t.integer  "place_id"
-    t.integer  "email_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "places_numbers", :force => true do |t|
-    t.integer  "place_id"
-    t.integer  "number_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "places_websites", :force => true do |t|
@@ -336,12 +238,5 @@ ActiveRecord::Schema.define(:version => 20100728132427) do
   add_index "users", ["last_request_at"], :name => "index_users_on_last_request_at"
   add_index "users", ["login"], :name => "index_users_on_login"
   add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
-
-  create_table "websites", :force => true do |t|
-    t.string   "address"
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end
