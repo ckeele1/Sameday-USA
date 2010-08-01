@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  model_name: MyString
+  model_id: 1
+  controller_action: MyString
+  created_at: 2010-08-01 13:49:17
+  updated_at: 2010-08-01 13:49:17
+
+two:
+  user_id: 1
+  model_name: MyString
+  model_id: 1
+  controller_action: MyString
+  created_at: 2010-08-01 13:49:17
+  updated_at: 2010-08-01 13:49:17

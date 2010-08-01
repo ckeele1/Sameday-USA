@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+	
   map.resources :alliance_members_websites
 
   map.resources :alliance_members_numbers
@@ -14,7 +15,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :states
 
   map.resources :alliance_members
-
+  
+  map.resources :user_activities
+  
   map.resources :groups_tables
 
   map.resources :groups

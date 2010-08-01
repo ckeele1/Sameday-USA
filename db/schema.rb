@@ -9,11 +9,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100801185935) do
+ActiveRecord::Schema.define(:version => 20100801194900) do
 
   create_table "alliance_members", :force => true do |t|
     t.string   "name"
     t.integer  "county_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "alliance_members_emails", :force => true do |t|
+    t.integer  "alliance_member_id"
+    t.integer  "email_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "alliance_members_hours", :force => true do |t|
+    t.integer  "alliance_member_id"
+    t.integer  "hour_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "alliance_members_numbers", :force => true do |t|
+    t.integer  "alliance_member_id"
+    t.integer  "number_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "alliance_members_websites", :force => true do |t|
+    t.integer  "alliance_member_id"
+    t.integer  "website_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -234,6 +262,15 @@ ActiveRecord::Schema.define(:version => 20100801185935) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "user_activities", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "model_name"
+    t.integer  "model_id"
+    t.string   "controller_action"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

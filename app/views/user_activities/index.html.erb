@@ -1,0 +1,30 @@
+<h1>Listing user_activities</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Model name</th>
+    <th>Model</th>
+    <th>Controller action</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+  </tr>
+
+<% @user_activities.each do |user_activity| %>
+  <tr>
+    <td><%=h user_activity.user_id %></td>
+    <td><%=h user_activity.model_name %></td>
+    <td><%=h user_activity.model_id %></td>
+    <td><%=h user_activity.controller_action %></td>
+    <td><%=h user_activity.created_at %></td>
+    <td><%=h user_activity.updated_at %></td>
+    <td><%= link_to 'Show', user_activity %></td>
+    <td><%= link_to 'Edit', edit_user_activity_path(user_activity) %></td>
+    <td><%= link_to 'Destroy', user_activity, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user_activity', new_user_activity_path %>
