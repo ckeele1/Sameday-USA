@@ -1,6 +1,22 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :user_activities
 
+  map.resources :alliance_members_websites
+
+  map.resources :alliance_members_numbers
+
+  map.resources :alliance_members_hours
+
+  map.resources :alliance_members_emails
+
+  map.resources :counties
+
+  map.resources :parishes
+
+  map.resources :states
+
+  map.resources :alliance_members
+
   map.resources :groups_tables
 
   map.resources :groups

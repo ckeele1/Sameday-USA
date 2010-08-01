@@ -1,5 +1,4 @@
-class Event < ActiveRecord::Base
-	has_and_belongs_to_many :itineraries
+class AllianceMember < ActiveRecord::Base
 	belongs_to :counties
 	has_many :numbers
 	has_many :websites

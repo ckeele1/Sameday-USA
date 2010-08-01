@@ -1,0 +1,2 @@
+module AllianceMembersNumbersHelper
+end

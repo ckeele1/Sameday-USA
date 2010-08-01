@@ -1,0 +1,2 @@
+module AllianceMembersWebsitesHelper
+end

@@ -1,0 +1,22 @@
+<h1>Listing alliance_members</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>County</th>
+  </tr>
+
+<% @alliance_members.each do |alliance_member| %>
+  <tr>
+    <td><%=h alliance_member.name %></td>
+    <td><%=h alliance_member.county_id %></td>
+    <td><%= link_to 'Show', alliance_member %></td>
+    <td><%= link_to 'Edit', edit_alliance_member_path(alliance_member) %></td>
+    <td><%= link_to 'Destroy', alliance_member, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New alliance_member', new_alliance_member_path %>
