@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @parish.name %>
+</p>
+
+<p>
+  <b>Abbreviation:</b>
+  <%=h @parish.abbreviation %>
+</p>
+
+
+<%= link_to 'Edit', edit_parish_path(@parish) %> |
+<%= link_to 'Back', parishes_path %>

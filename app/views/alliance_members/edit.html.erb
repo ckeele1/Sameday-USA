@@ -1,0 +1,20 @@
+<h1>Editing alliance_member</h1>
+
+<% form_for(@alliance_member) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :county_id %><br />
+    <%= f.text_field :county_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @alliance_member %> |
+<%= link_to 'Back', alliance_members_path %>

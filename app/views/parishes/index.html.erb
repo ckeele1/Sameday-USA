@@ -1,0 +1,22 @@
+<h1>Listing parishes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Abbreviation</th>
+  </tr>
+
+<% @parishes.each do |parish| %>
+  <tr>
+    <td><%=h parish.name %></td>
+    <td><%=h parish.abbreviation %></td>
+    <td><%= link_to 'Show', parish %></td>
+    <td><%= link_to 'Edit', edit_parish_path(parish) %></td>
+    <td><%= link_to 'Destroy', parish, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New parish', new_parish_path %>

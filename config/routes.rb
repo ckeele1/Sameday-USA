@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :parishes
+
+  map.resources :states
+
+  map.resources :alliance_members
+
   map.resources :groups_tables
 
   map.resources :groups
