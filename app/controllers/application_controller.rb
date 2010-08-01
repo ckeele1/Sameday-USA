@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 	rescue_from 'Acl9::AccessDenied', :with => :access_denied
 
 	before_filter :is_a_valid_token_set?
+	before_filter :track_user
 
 	# Test Custom Error Pages in development environment
 	# alias_method :rescue_action_locally, :rescue_action_in_public
@@ -73,6 +74,18 @@ class ApplicationController < ActionController::Base
 			else
 				false
 			end
+		end
+		
+		def track_user
+		  user_id = current_user.id || 0
+		  model_id = request.parameters["id"] || nil
+
+		  UserActivity.create!(
+		    :user_id => user_id,
+		    :controller_action => request.parameters["action"],
+		    :model_name => request.parameters["controller"].singularize.capitalize,
+		    :model_id => model_id
+		  )
 		end
 
 		def application_version
