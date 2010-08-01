@@ -1,0 +1,33 @@
+<p>
+  <b>User:</b>
+  <%=h @user_activity.user_id %>
+</p>
+
+<p>
+  <b>Model name:</b>
+  <%=h @user_activity.model_name %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%=h @user_activity.model_id %>
+</p>
+
+<p>
+  <b>Controller action:</b>
+  <%=h @user_activity.controller_action %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @user_activity.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%=h @user_activity.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_activity_path(@user_activity) %> |
+<%= link_to 'Back', user_activities_path %>

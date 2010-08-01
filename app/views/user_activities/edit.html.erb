@@ -1,0 +1,36 @@
+<h1>Editing user_activity</h1>
+
+<% form_for(@user_activity) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :model_name %><br />
+    <%= f.text_field :model_name %>
+  </p>
+  <p>
+    <%= f.label :model_id %><br />
+    <%= f.text_field :model_id %>
+  </p>
+  <p>
+    <%= f.label :controller_action %><br />
+    <%= f.text_field :controller_action %>
+  </p>
+  <p>
+    <%= f.label :created_at %><br />
+    <%= f.datetime_select :created_at %>
+  </p>
+  <p>
+    <%= f.label :updated_at %><br />
+    <%= f.datetime_select :updated_at %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @user_activity %> |
+<%= link_to 'Back', user_activities_path %>
