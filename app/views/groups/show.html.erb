@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @group.name %>
+</p>
+
+<p>
+  <b>Authorizable type:</b>
+  <%=h @group.authorizable_type %>
+</p>
+
+<p>
+  <b>Authorizable:</b>
+  <%=h @group.authorizable_id %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @group.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%=h @group.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

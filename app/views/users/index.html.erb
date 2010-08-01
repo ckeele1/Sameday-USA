@@ -4,8 +4,6 @@
 	<thead>
 		<th>First Name</th>
 		<th>Last Name</th>
-		<th>Email Address</th>
-		<th>Phone Number</th>
 		<th>Login</th>
 		<th>Status</th>
 		<th class="actions">Actions</th>
@@ -16,8 +14,6 @@
 			<tr class="<%= cycle('even','odd') %>">
 				<td><%=h user.first_name %></td>
 				<td><%=h user.last_name %></td>
-				<td><%=h user.email_address %></td>
-				<td><%=h user.phone_number %></td>
 				<td><%=h user.login %></td>
 				<td><%=h user.active %></td>
 				<td class="actions">
@@ -34,4 +30,4 @@
 
 <br />
 
-<%= link_to 'New user', new_user_path if create_users? %>
+<%= link_to 'New user', new_user_path  %>

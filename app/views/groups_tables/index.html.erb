@@ -1,0 +1,26 @@
+<h1>Listing groups_tables</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Group</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+  </tr>
+
+<% @groups_tables.each do |groups_table| %>
+  <tr>
+    <td><%=h groups_table.user_id %></td>
+    <td><%=h groups_table.group_id %></td>
+    <td><%=h groups_table.created_at %></td>
+    <td><%=h groups_table.updated_at %></td>
+    <td><%= link_to 'Show', groups_table %></td>
+    <td><%= link_to 'Edit', edit_groups_table_path(groups_table) %></td>
+    <td><%= link_to 'Destroy', groups_table, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New groups_table', new_groups_table_path %>

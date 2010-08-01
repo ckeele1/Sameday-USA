@@ -92,42 +92,43 @@ module ApplicationHelper
 		allow :administrator
 		allow :editor
 		allow :owner, :of => Place
-		allow anonymous
 	end
 	
 	access_control :destroy_places? do
 		allow :administrator
 		allow :editor
 		allow :owner, :of => Place
-		allow anonymous
 	end
 
 	access_control :create_places? do
 		allow :administrator
 		allow :editor
 		allow :owner, :of => Place
-		allow anonymous
 	end
 	
 	access_control :edit_users? do
 		allow :administrator
 		allow :owner, :of => User
+		allow anonymous
 	end
 	
 	access_control :destroy_users? do
 		allow :administrator
 		allow :owner, :of => User
+		allow anonymous
 	end
 
 	access_control :create_users? do
 		allow :administrator
 		allow :owner, :of => User
+		allow anonymous
 	end
 
 	access_control :show_users? do
 		allow :administrator
 		allow :editor
 		allow :owner, :of => User
+		allow anonymous
 	end
 
 	access_control :edit_transits? do

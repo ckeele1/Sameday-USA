@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     allow :owner, :of => User
     allow :editor
     allow :administrator
+    allow anonymous
   end
 
   def index

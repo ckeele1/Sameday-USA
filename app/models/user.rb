@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
 	has_and_belongs_to_many :groups
 	
-	attr_accessible :first_name, :middle_name, :last_name, :login, :group_ids
+	attr_accessible :first_name, :middle_name, :last_name, :login, :group_ids, :password, :password_confirmation
 
 	validates_presence_of :login, :first_name, :last_name
 
