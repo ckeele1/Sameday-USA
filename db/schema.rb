@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100801183602) do
+ActiveRecord::Schema.define(:version => 20100801185935) do
 
   create_table "alliance_members", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(:version => 20100801183602) do
   create_table "categories_places", :id => false, :force => true do |t|
     t.integer "category_id"
     t.integer "place_id"
+  end
+
+  create_table "counties", :force => true do |t|
+    t.string   "name"
+    t.string   "abbreviation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "coupons_events", :force => true do |t|
@@ -156,13 +163,6 @@ ActiveRecord::Schema.define(:version => 20100801183602) do
   create_table "numbers_places", :force => true do |t|
     t.integer  "place_id"
     t.integer  "number_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "parishes", :force => true do |t|
-    t.string   "name"
-    t.string   "abbreviation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

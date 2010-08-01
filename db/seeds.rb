@@ -5,9 +5,9 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
-#user = User.find_or_create(:login => 'administrator', :first_name => 'System', :last_name => 'Administrator', :password => 'sameday', :password_confirmation => 'sameday')
-#user.groups << Group.find_or_create_by_name('administrator')
-#user.save!
+user = User.create(:login => 'administrator', :first_name => 'System', :last_name => 'Administrator', :password => 'sameday', :password_confirmation => 'sameday')
+user.groups << Group.find_or_create_by_name('administrator')
+user.save!
 
 # Set the states
 State.delete_all

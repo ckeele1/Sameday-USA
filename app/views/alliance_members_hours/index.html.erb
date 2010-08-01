@@ -1,0 +1,22 @@
+<h1>Listing alliance_members_hours</h1>
+
+<table>
+  <tr>
+    <th>Alliance member</th>
+    <th>Hour</th>
+  </tr>
+
+<% @alliance_members_hours.each do |alliance_members_hour| %>
+  <tr>
+    <td><%=h alliance_members_hour.alliance_member_id %></td>
+    <td><%=h alliance_members_hour.hour_id %></td>
+    <td><%= link_to 'Show', alliance_members_hour %></td>
+    <td><%= link_to 'Edit', edit_alliance_members_hour_path(alliance_members_hour) %></td>
+    <td><%= link_to 'Destroy', alliance_members_hour, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New alliance_members_hour', new_alliance_members_hour_path %>

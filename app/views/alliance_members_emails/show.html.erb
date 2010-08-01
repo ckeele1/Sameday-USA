@@ -1,0 +1,13 @@
+<p>
+  <b>Alliance member:</b>
+  <%=h @alliance_members_email.alliance_member_id %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @alliance_members_email.email_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_alliance_members_email_path(@alliance_members_email) %> |
+<%= link_to 'Back', alliance_members_emails_path %>

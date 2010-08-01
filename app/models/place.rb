@@ -2,11 +2,12 @@ class Place < ActiveRecord::Base
 	has_and_belongs_to_many :itineraries
 	has_and_belongs_to_many :categories
 	has_and_belongs_to_many :hours
-
-  has_many :numbers
-  has_many :websites
-  has_many :emails
-  has_many :coupons
+	belongs_to :counties
+	
+	has_many :numbers
+	has_many :websites
+	has_many :emails
+	has_many :coupons
 
 	has_attached_file :photo, :styles => { :medium => "300x300>", :mobile => "300x300>", :thumbnail => "100x100>", :tour => "300x300>" }
 	has_attached_file :audio, :default_url => ''

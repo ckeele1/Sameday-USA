@@ -1,0 +1,13 @@
+<p>
+  <b>Alliance member:</b>
+  <%=h @alliance_members_hour.alliance_member_id %>
+</p>
+
+<p>
+  <b>Hour:</b>
+  <%=h @alliance_members_hour.hour_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_alliance_members_hour_path(@alliance_members_hour) %> |
+<%= link_to 'Back', alliance_members_hours_path %>

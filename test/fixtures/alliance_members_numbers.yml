@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  alliance_member_id: 1
+  number_id: 1
+
+two:
+  alliance_member_id: 1
+  number_id: 1

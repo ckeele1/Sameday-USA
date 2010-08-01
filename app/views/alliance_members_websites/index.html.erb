@@ -1,0 +1,22 @@
+<h1>Listing alliance_members_websites</h1>
+
+<table>
+  <tr>
+    <th>Alliance member</th>
+    <th>Website</th>
+  </tr>
+
+<% @alliance_members_websites.each do |alliance_members_website| %>
+  <tr>
+    <td><%=h alliance_members_website.alliance_member_id %></td>
+    <td><%=h alliance_members_website.website_id %></td>
+    <td><%= link_to 'Show', alliance_members_website %></td>
+    <td><%= link_to 'Edit', edit_alliance_members_website_path(alliance_members_website) %></td>
+    <td><%= link_to 'Destroy', alliance_members_website, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New alliance_members_website', new_alliance_members_website_path %>
