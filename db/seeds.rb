@@ -5,9 +5,78 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
-user = User.create(:login => 'administrator', :first_name => 'System', :last_name => 'Administrator', :password => 'sameday', :password_confirmation => 'sameday')
-user.groups << Group.find_or_create_by_name('administrator')
-user.save!
+#user = User.create(:login => 'administrator', :first_name => 'System', :last_name => 'Administrator', :password => 'sameday', :password_confirmation => 'sameday')
+#user.groups << Group.find_or_create_by_name('administrator')
+#user.save!
+
+#Set LA Parishes
+County.delete_all
+['De Soto',
+'Caddo',
+'Bossier',
+'Red River',
+'Webster',
+'Bienville',
+'Claiborne',
+'Lincoln',
+'Jackson',
+'Union',
+'Ouachita',
+'Caldwell',
+'Morehouse',
+'Richland',
+'Franklin',
+'West Carroll',
+'East Carroll',
+'Madison',
+'Tensas',
+'Sabine',
+'Vernon',
+'Beauregard',
+'Natchitoches',
+'Rapides',
+'Winn',
+'Grant',
+'La Salle',
+'Avoyelles',
+'Catahoula',
+'Concordia',
+'Calcasieu',
+'Cameron',
+'Allen',
+'Jefferson Davis',
+'Evangeline',
+'Acadia',
+'Vermillion',
+'St. Landry',
+'Lafayette',
+'St. Martin',
+'Iberia',
+'St. Mary',
+'Assumption',
+'Terrebonne',
+'Lafourche',
+'Pointe Coupee',
+'Iberville',
+'West Feliciana',
+'West Baton Rouge',
+'East Feliciana',
+'East Baton Rouge',
+'St. Helena',
+'Livingston',
+'Ascension',
+'St. James',
+'Tangipahoa',
+'St. John The Baptist',
+'St. Charles',
+'Jefferson',
+'Washington',
+'St. Tammany',
+'Orleans',
+'St. Bernard',
+'Plaquemines',].each do |county|
+  County.create!([{:name => "#{county}"}])
+end
 
 # Set the states
 State.delete_all

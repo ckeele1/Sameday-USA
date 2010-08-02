@@ -1,0 +1,2 @@
+page.replace_html "county-selector", :partial => 'county_selector'
+page.show "county-selector"

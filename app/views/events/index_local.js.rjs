@@ -1,0 +1,2 @@
+page.replace_html "location-list", :partial => 'index_local'
+page.show "location-list"

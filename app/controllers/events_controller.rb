@@ -1,4 +1,29 @@
 class EventsController < ApplicationController
+	
+	def find_counties
+		if request.post?
+			@state_id=params[:id]
+			
+			respond_to do |format|
+				format.js{ }
+			end
+		end
+	end
+	
+	def index_local
+		if request.post?
+			@county_id=params[:id]
+			#@places = Place.find_all_by_state(State.find_all_by_county(@county_id).id)
+			#@places = Place.search({:category => params[:category], :name => params["name"], :location => params["location"], :owner => params["contact"]})
+			@events=Event.all
+			    
+			respond_to do |format|
+				format.js{ }
+      			format.html { @events = @events.paginate :page => params[:page], :per_page => 20 }
+      			format.xml  { render :xml => @events }
+  			end
+		end
+	end
   # GET /events
   # GET /events.xml
   def index

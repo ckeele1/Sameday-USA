@@ -1,36 +1,22 @@
 <h2>Events</h2>
 
-<div id="filters">
-	<%= render :partial => 'shared/filter', :locals => { :filter_fields => [
-			{ :term => params[:name], :label => 'Name' },
-			{ :term => params[:location], :label => 'Location' },
-			{ :term => params[:contact], :label => 'Contact' },
-			{ :term => params[:category], :label => 'Category' }
-		] } %>
-</div>
-
 <table>
-  <thead>
-    <th>Name</th>
-    <th>Url</th>
-  </thead>
-
-<% @events.each do |event| %>
-	<tbody>
-		<tr class="<%= cycle('even','odd') %>">
-		    <td><%=h event.name %></td>
-		    <td><%=h event.url %></td>
-		    <td class="actions">
-		    	<%= link_to 'Show', event %>
-		    	<%= link_to 'Edit', edit_event_path(event) %>
-		    	<%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %>
-	    	</td>
-  		</tr>
-  	</tbody>
-<% end %>
+	<tr>
+		<td>
+			<div id="state-selector">
+				<%= render :partial => 'state_selector' %>
+			</div>
+		</td>
+		<td>
+			<div id="county-selector" style="print: none; display: none;">
+			</div>
+		</td>
+	</tr>
 </table>
+<br />
+<div id="location-list" style="display: none;">
 
-<%= will_paginate @events %>
+</div>
 
 <br />
 
