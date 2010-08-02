@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
 	has_and_belongs_to_many :groups
 	has_many :alliance_members
-	has_many :counties :through => :alliance_members
+	has_many :counties, :through => :alliance_members	
 	
 	attr_accessible :first_name, :middle_name, :last_name, :login, :group_ids, :password, :password_confirmation
 

@@ -77,15 +77,18 @@ class ApplicationController < ActionController::Base
 		end
 		
 		def track_user
-		  user_id = current_user.id || 0
-		  model_id = request.parameters["id"] || nil
-
-		  UserActivity.create!(
-		    :user_id => user_id,
-		    :controller_action => request.parameters["action"],
-		    :model_name => request.parameters["controller"].singularize.capitalize,
-		    :model_id => model_id
-		  )
+			begin
+			user_id = current_user.id || 0
+			model_id = request.parameters["id"] || nil
+	
+			UserActivity.create!(
+			  :user_id => user_id,
+			  :controller_action => request.parameters["action"],
+			  :model_name => request.parameters["controller"].singularize.capitalize,
+			  :model_id => model_id
+			)
+			rescue
+			end
 		end
 
 		def application_version

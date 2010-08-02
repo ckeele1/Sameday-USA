@@ -7,12 +7,12 @@ class PlacesController < ApplicationController
 		allow :administrator
 		allow anonymous
 	end
-
+	
 	def index
 		@places = Place.search({:category => params[:category], :name => params["name"], :location => params["location"], :owner => params["contact"]})
 
 		respond_to do |format|
-			format.html { @places = @places.paginate :page => params[:page], :per_page => 20 }
+			format.html { @places = @places }
 			format.xml { @places = @places }
 		end
 	end
