@@ -1,4 +1,4 @@
-class CountiesController < ApplicationController
+class CountiesController < ApplicationController	
   # GET /counties
   # GET /counties.xml
   def index

@@ -1,0 +1,2 @@
+page.replace_html "county-selector", :partial => 'places/index_local'
+page.show "county-selector"

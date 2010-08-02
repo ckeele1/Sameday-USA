@@ -17,7 +17,7 @@ class Place < ActiveRecord::Base
 	validates_attachment_content_type :audio, :content_type => [ 'application/mp3', 'application/x-mp3', 'audio/mpeg', 'audio/mp3' ], :allow_blank => true
 	validates_attachment_size :audio, :less_than => 30.megabytes, :unless => Proc.new { |p| p.audio }
 
-	validates_presence_of :name, :state_id, :county_id, :address_line_1, :city, :zipcode
+	#validates_presence_of :name, :state_id, :county_id, :address_line_1, :city, :zipcode
 	
 	default_scope :order => 'places.name ASC'
 

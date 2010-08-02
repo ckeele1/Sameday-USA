@@ -1,9 +1,4 @@
-class StatesController < ApplicationController
-	
-	def state_selector
-		
-	end
-	
+class StatesController < ApplicationController	
   # GET /states
   # GET /states.xml
   def index

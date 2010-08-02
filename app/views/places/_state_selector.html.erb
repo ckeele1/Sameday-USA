@@ -2,5 +2,6 @@
 	<div style="print:none;">
 		<%= f.label :id, "Select a State:" %><br />
 		<%= f.select :id, State.all.map {|p| [p.name, p.id] }, {:multiple => false} %>
+		<%= submit_to_remote 'submit-button', "Find Counties", :url => { :controller => :places, :action => :find_counties }, :html => { :id => "submit-button"} %>
 	</div>
 <% end %>

@@ -1,7 +1,22 @@
 <h2>Places</h2>
 
-<%= render :partial => 'shared/state_selector' %>
+<table>
+	<tr>
+		<td>
+			<div id="state-selector">
+				<%= render :partial => 'state_selector' %>
+			</div>
+		</td>
+		<td>
+			<div id="county-selector" style="print: none; display: none;">
+			</div>
+		</td>
+	</tr>
+</table>
+<br />
+<div id="location-list" style="display: none;">
 
+</div>
 
 <br />
 

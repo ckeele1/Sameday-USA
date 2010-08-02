@@ -1,0 +1,5 @@
+<% form_for :counties, @counties, :url => { :controller => :counties, :action => :find_counties } do |f| %>
+	<%= f.label :id, "Select a County:" %><br />
+	<%= f.select :id, County.all.map {|p| [p.name, p.id] }, {:multiple => false} %>
+	<%= submit_to_remote 'submit-button', "Search this County", :url => { :controller => :places, :action => :index_local }, :html => { :id => "submit-button"} %>	
+<% end %>
