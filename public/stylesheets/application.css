@@ -17,16 +17,16 @@ textarea.short {
 }
 
 thead th {
-	background: #3D166E;
+	background: #336699;
 	color: #FFF;
 }
 
 tr.even td {
-	background: #B2B2E0;
+	background: #6699FF;
 }
 
 tr.odd td {
-	background: #FEF1D4;
+	background: #FFFFFF;
 }
 
 table,
@@ -102,7 +102,7 @@ table,
 
 /* Header */
 #sameday-header {
-	background: #461f7c;
+	background: #330099;
 }
 
 .sameday-logo {
@@ -259,7 +259,7 @@ span.fieldset {
 }
 
 #menu a {
-	color: #3D166E;
+	color: #996600;
 	display: block;
 	text-decoration: none;
 }
