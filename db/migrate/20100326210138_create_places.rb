@@ -2,6 +2,9 @@ class CreatePlaces < ActiveRecord::Migration
   def self.up
     create_table :places do |t|
       t.string :name
+      t.string :address
+      t.string :city
+      t.string :zipcode
       t.string :url
       t.boolean :open_status
       t.boolean :status
@@ -10,8 +13,6 @@ class CreatePlaces < ActiveRecord::Migration
       t.string :location
       t.text :description
       t.string :owner
-      t.string :menu_link
-      t.text :payment_methods
 
       t.timestamps
     end

@@ -1,16 +1,72 @@
 <h1>Editing event</h1>
 
 <% form_for(@event) do |f| %>
-  <%= f.error_messages %>
+<%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </p>
+<p>
+  <%= f.label :name, "Name" %><br />
+  <%= f.text_field :name, :class => 'title' %>
+</p>
+<p>
+  <%= f.label :address %><br />
+  <%= f.text_field :address %>
+</p>
+<p>
+  <%= f.label :city %><br />
+  <%= f.text_field :city %>
+</p>
+<p>
+  <%= f.label :zipcode %><br />
+  <%= f.text_field :zipcode %>
+</p>
+<p>
+  <%= f.label :url %><br />
+  <%= f.text_field :url %>
+</p>
+<p>
+	<%= f.label :hour_range, "Hour Range" %>
+	<%= f.text_field :hour_range%>
+<p>
+	<%= f.label :status %><br />
+	<%= f.check_box :status, :checked => checked?(f.object.status, new_record=f.object.new_record?) %> Active
+</p>
+<p>
+  <%= f.label :longitude %><br />
+  <%= f.text_field :longitude %>
+</p>
+<p>
+  <%= f.label :latitude %><br />
+  <%= f.text_field :latitude %>
+</p>
+<p>
+  <%= f.label :location %><br />
+  <%= f.text_field :location %>
+</p>
+<p>
+  <%= f.label :description %><br />
+  <%= f.text_area :description %>
+</p>
+<p>
+  <%= f.label :owner, "Contact" %><br />
+  <%= f.text_field :owner %>
+</p>
+<p>
+  <%= f.label :owner, "Contact Email Address" %><br />
+  <%= f.text_field :owner_email_address %>
+</p>
+<p>
+  <%= f.label :categories %><br />
+	<select id="place_category_ids" name="place[category_ids][]" multiple="multiple">
+	  <%= expand_tree_into_select_field(Category.top, @place.categories.collect(&:id_s)) %>
+	</select>
+</p>
+<p>
+	<%= f.label :hours, "Hours	 Open" %>
+	<% f.fields_for :hours do |builder| %>
+		<%= render "hour_fields", :f => builder %>
+	<% end %>
+</p>
+<div class="add-more"><%= link_to_add_fields "Add more hours", f, :hours %></div>
   <p>
     <%= f.submit 'Update' %>
   </p>

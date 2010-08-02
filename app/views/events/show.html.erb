@@ -4,9 +4,44 @@
 </p>
 
 <p>
-  <b>Url:</b>
-  <%=h @event.url %>
+  <b>Address:</b>
+  <%=h @event.address %>
 </p>
+
+<p>
+  <b>City:</b>
+  <%=h @event.city %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%=h @event.zipcode %>
+</p>
+<p>
+	<b>Hours Open:</b>
+	<%=h @event.hour_range%>
+</p>
+<p>
+	<b>Longitude:</b>
+	<%=h @event.longitude%>
+</p>
+<p>
+	<b>Latitude:</b>
+	<%=h @event.latitude%>
+</p>
+<p>
+	<b>Location:</b>
+	<%=h @event.location%>
+</p>
+<p>
+	<b>Description:</b>
+	<%=h @event.description%>
+</p>
+<p>
+	<b>Owner:</b>
+	<%=h @event.owner%>
+</p>
+
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

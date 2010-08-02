@@ -12,13 +12,15 @@
 	<thead>
 		<th>Name</th>
 		<th>Address</th>
+		<th>City</th>
 		<th class="actions">Actions</th>
 	</thead>
 	<% @places.each do |place| %>
 		<tbody>
 			<tr class="<%= cycle('even','odd') %>">
 			    <td><%=h place.name %></td>
-			    <td><%=h place.url %></td>
+			    <td><%=h place.address %></td>
+			    <td><%=h place.city%>
 			    <td class="actions">
 			    	<%= link_to image_tag('icons/show.png', :alt => 'Show'), place %>
 			    	<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_place_path(place) %>

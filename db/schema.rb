@@ -110,7 +110,15 @@ ActiveRecord::Schema.define(:version => 20100801194900) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
+    t.string   "hour_range"
     t.string   "url"
+    t.boolean  "open_status"
+    t.boolean  "status"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "location"
+    t.text     "description"
+    t.string   "owner"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -197,6 +205,9 @@ ActiveRecord::Schema.define(:version => 20100801194900) do
 
   create_table "places", :force => true do |t|
     t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "zipcode"
     t.string   "url"
     t.boolean  "open_status"
     t.boolean  "status"
@@ -205,8 +216,6 @@ ActiveRecord::Schema.define(:version => 20100801194900) do
     t.string   "location"
     t.text     "description"
     t.string   "owner"
-    t.string   "menu_link"
-    t.text     "payment_methods"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"

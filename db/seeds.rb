@@ -9,6 +9,20 @@
 #user.groups << Group.find_or_create_by_name('administrator')
 #user.save!
 
+#Set Sample Places
+Places.delete_all
+[].each do |place|
+  place = place.split('-')
+  Place.create!([{:name => "#{place[0]}", :abbreviation => "#{place[1]}"}])
+end
+
+#Set Sample Events
+Events.delete_all
+[].each do |event|
+  event = event.split('-')
+  Event.create!([{:name => "#{event[0]}", :abbreviation => "#{event[1]}"}])
+end
+
 #Set LA Parishes
 County.delete_all
 ['De Soto',

@@ -11,14 +11,16 @@
 <table>
 	<thead>
 		<th>Name</th>
-		<th>Duration</th>
+		<th>City</th>
+		<th>Hours Open</th>
 		<th class="actions">Actions</th>
 	</thead>
 	<% @events.each do |event| %>
 		<tbody>
 			<tr class="<%= cycle('even','odd') %>">
 			    <td><%=h event.name %></td>
-			    <td><%=h event.url %></td>
+			    <td><%=h event.city %></td>
+			    <td><%=h event.hour_range %></td>
 			    <td class="actions">
 			    	<%= link_to image_tag('icons/show.png', :alt => 'Show'), event %>
 			    	<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_event_path(event) %>

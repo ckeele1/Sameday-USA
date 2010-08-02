@@ -12,6 +12,18 @@
   <%= f.text_field :name, :class => 'title' %>
 </p>
 <p>
+  <%= f.label :address %><br />
+  <%= f.text_field :address %>
+</p>
+<p>
+  <%= f.label :city %><br />
+  <%= f.text_field :city %>
+</p>
+<p>
+  <%= f.label :zipcode %><br />
+  <%= f.text_field :zipcode %>
+</p>
+<p>
   <%= f.label :url %><br />
   <%= f.text_field :url %>
 </p>
@@ -64,14 +76,6 @@
 <p>
   <%= f.label :owner, "Contact Email Address" %><br />
   <%= f.text_field :owner_email_address %>
-</p>
-<p>
-  <%= f.label :menu_link %><br />
-  <%= f.text_field :menu_link %>
-</p>
-<p>
-  <%= f.label :payment_methods %><br />
-  <%= f.text_area :payment_methods, :class => 'short' %>
 </p>
 <p>
   <%= f.label :categories %><br />

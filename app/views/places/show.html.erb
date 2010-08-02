@@ -22,6 +22,21 @@
 <h2><%=h @place.name %></h2>
 
 <p>
+  <%= label_tag "Address" %><br />
+  <%=h @place.address %>
+</p>
+
+<p>
+  <%= label_tag "City" %><br />
+  <%=h @place.city %>
+</p>
+
+<p>
+  <%= label_tag "Zipcode" %><br />
+  <%=h @place.azipcode %>
+</p>
+
+<p>
   <%= label_tag "Url" %><br />
   <%=h @place.url %>
 </p>
@@ -68,17 +83,6 @@
   <%=h @place.owner %><br />
 	<%=h @place.owner_email_address %>
 </p>
-
-<p>
-  <%= label_tag "Menu link" %><br />
-  <%=h @place.menu_link %>
-</p>
-
-<p>
-  <%= label_tag "Payment methods" %><br />
-  <%=h @place.payment_methods %>
-</p>
-
 
 <% if edit_places? %><%= link_to 'Edit', edit_place_path(@place) %> | <% end %>
 <%= link_to 'Places', places_path %>
